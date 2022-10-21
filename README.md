@@ -1,4 +1,4 @@
-SIESTA_on_PC
+Ab initio SIESTA-4.1 Molecular Dynamics
 
   Ab initio SIESTA simulation code is implemented for electronic structure calculations and ab initio 
 molecular dynamics simulations of molecules and solids by the spanish group, https://departments.icmab.es/ 
@@ -11,7 +11,8 @@ the parallel version. The file named siesta-4.1-b4gcc.tar.gz is unzipped and the
 these three packages must be installed to your system bofore the make step is done.
 For the NEC's Intel vector-parallel case, however, one has the specified Scalapack package 
 and needs to go through more steps. The modified summary is written in "Annual Report (2021)" of
-this page. It is already modified in "arch.make" and the file siesta-4.1-b4-LX.tar.gz (Ref. 3).
+this page; important lines are shown in English. 
+The files are already modified in "arch.make" and the file siesta-4.1-b4-LX.tar.gz (Ref. 3).
 
 References:
 
