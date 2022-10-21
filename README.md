@@ -10,8 +10,8 @@ are shown in PDF here. But, it is needed to go through more steps due to complex
 the parallel version. The file named siesta-4.1-b4gcc.tar.gz is unzipped, do "sh ../Src/obj_setup.sh", 
 and copy "arch.make" to "Obj". These three packages including mpi-3.2 above must be installed 
 to your system bofore "make" is executed. 
-The are three cases available for the "make" time; the file "arch.make-2" here shows 
-a temnplate for "arch.make" of MPI or OMP. You should test which one is most efficient in the gfortran run. 
+The are three cases available for the "make" time; the file "arch.make-2" in this directory shows 
+a template for "arch.make" of MPI or OMP. You should test which one is most efficient in the gfortran run. 
 
 For NEC's Intel vector-parallel version, however, one has the specified MPI and Scalapack packages 
 and needs to go through more steps. The modified changes are summarized in "Annual Report (2021)" of
