@@ -19,4 +19,4 @@ References:
 1. J. Phys. Cond. Matt. 14, 2745 (2002).
 2. Chem. Phys. 152, 204108 (2020). 
 3. Annual Report of National Institute for Fusion Science, R03/275 (2021) [mostly in Japanese, 
-important points in English]
+important points and figures in English]
