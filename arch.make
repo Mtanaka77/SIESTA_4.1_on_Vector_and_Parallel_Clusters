@@ -6,13 +6,12 @@
 # See Docs/Contributors.txt for a list of contributors.
 #
 #-------------------------------------------------------------------
-# arch.make file for NEC fortran compiler, CC, FC and LIBS.
+# arch.make file for NEC's fortran compiler, CC, FC and LIBS.
 # To use this arch.make file you should rename it to
 #   arch.make
 # or make a sym-link.
 # For an explanation of the flags see DOCUMENTED-TEMPLATE.make
-# Important for a make step !!
-#  module load intel-lx
+# Important for a make step, "module load intel-lx" is necessary.
 
 .SUFFIXES:
 .SUFFIXES: .f .F .o .c .a .f90 .F90
