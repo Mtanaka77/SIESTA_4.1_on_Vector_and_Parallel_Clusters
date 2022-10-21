@@ -15,8 +15,8 @@ which one is most efficient in your run.
 For NEC's Intel vector-parallel version, however, one has the specified MPI and Scalapack packages 
 and needs to go through more steps. The modified changes are summarized in "Annual Report (2021)" of
 this page; the important lines to note are shown in English, so you may not miss the points. 
-The files are already modified in "arch.make" and the file siesta-4.1-b4-LX.tar.gz is unzipped
-and the make step is executed (Ref. 3).
+The files are already modified in "arch.make", siesta-4.1-b4-LX.tar.gz is unzipped, and the make step 
+is executed (Ref. 3).
 
 References:
 
