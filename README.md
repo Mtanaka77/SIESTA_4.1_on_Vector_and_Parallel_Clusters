@@ -1,4 +1,4 @@
-# SIESTA_on_PC
+SIESTA_on_PC
 
   The SIESTA code is implemented for electronic structure calculations and ab initio molecular dynamics 
 simulations of molecules and solids by spanish group https://departments.icmab.es/. It is usually compiled  
@@ -6,4 +6,5 @@ for parallel MPI environment, but also is done for Intel's vectorized compiler. 
 how the siesta-4.1 code is compiled.
 
   We can successfully compile the siesta-4.1-b4 with mpi-3.2, scalapack 2, and OpenBLAS-0.3.13 for 
-the parallel version. For NEC's Intel vector case, however, one has to go more steps.
+the parallel version. For NEC's Intel vector case, however, one has the specified Scalapack routine and 
+go through more steps.
