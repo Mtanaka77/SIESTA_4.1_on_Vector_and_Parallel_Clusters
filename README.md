@@ -7,8 +7,8 @@ It is compiled for Intel's vector-parallel compiler, but it is needed to go thro
 due to complexity.
 
   We can successfully compile the siesta-4.1-b4 with mpi-3.2, scalapack 2.0, and OpenBLAS-0.3.13 for 
-the parallel version. The file is named siesta-4.1-b4gcc.tar.gz and these three packages must be 
-installed to your system.
+the parallel version. The file named siesta-4.1-b4gcc.tar.gz is unzipped and the "make" step; 
+these three packages must be installed to your system bofore the make step is done.
 For the NEC's Intel vector-parallel case, however, one has the specified Scalapack package 
 and needs to go through more steps. It is already modified in arch.make and the file 
 siesta-4.1-b4-LX.tar.gz (Ref. 3).
