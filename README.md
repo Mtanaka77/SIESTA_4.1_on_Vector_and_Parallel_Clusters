@@ -9,8 +9,8 @@ are shown in PDF here. But, it is needed to go through more steps due to complex
   We can successfully compile the gfortran siesta-4.1-b4 with mpi-3.2, scalapack 2.0, and OpenBLAS-0.3.13 for 
 the parallel version. The file named siesta-4.1-b4gcc.tar.gz is unzipped, do "sh ../Src/obj_setup.sh", 
 and copy "arch.make" to "Obj". These three packages above must be installed to your system bofore "make"
-is executed. The are three cases available to Obj1-MPI, Obj3-OMP, or Obj5-OMP-MPI, so you should test 
-which one is most efficient in your run. 
+is executed. The are three cases available to "make": Obj1-MPI, Obj3-OMP, or Obj5-OMP-MPI, so you should test 
+which one is most efficient in your gfortran run. 
 
 For NEC's Intel vector-parallel version, however, one has the specified MPI and Scalapack packages 
 and needs to go through more steps. The modified changes are summarized in "Annual Report (2021)" of
