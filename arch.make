@@ -55,9 +55,7 @@ LIBS =  -L${MKLROOT}/lib/intel64 -lmkl_scalapack_lp64 -lmkl_intel_lp64 -lmkl_seq
 FFLAGS_DEBUG = -g -O1  # your appropriate flags here...
 
 # The atom.f code is very vulnerable. Particularly the Intel compiler
-# will
-#
-# make an erroneous compilation of atom.f with high optimization
+# will make an erroneous compilation of atom.f with high optimization
 # levels.
 atom.o: atom.F
 	$(FC_SERIAL) -c $(FFLAGS_DEBUG) $(INCFLAGS) $(FPPFLAGS) $(FPPFLAGS_fixed_F) $< 
