@@ -6,7 +6,7 @@
 # See Docs/Contributors.txt for a list of contributors.
 #
 #-------------------------------------------------------------------
-# arch.make file for gfortran compiler.
+# arch.make file for NEC fortran compiler, CC, FC and LIBS.
 # To use this arch.make file you should rename it to
 #   arch.make
 # or make a sym-link.
