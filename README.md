@@ -12,7 +12,7 @@ these three packages must be installed to your system bofore the make step is do
 cases available: Obj1-MPI, Obj3-OMP, and Obj5-OMP-MPI, so you should test which one is most efficient 
 in your run. 
 
-For the NEC's Intel vector-parallel version, however, one has the specified Scalapack package 
+For the NEC's Intel vector-parallel version, however, one has the specified MPI and Scalapack packages 
 and needs to go through more steps. The modified change summary is written in "Annual Report (2021)" of
 this page; the important lines to note are shown in English, so you may not miss the points. 
 The files are already modified in "arch.make" and the file named siesta-4.1-b4-LX.tar.gz (Ref. 3).
