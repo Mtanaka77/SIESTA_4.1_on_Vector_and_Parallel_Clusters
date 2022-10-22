@@ -2,9 +2,9 @@ Ab-initio SIESTA-4.1 Molecular Dynamics
 
   Ab initio SIESTA simulation code is implemented for electronic structure calculations and ab initio 
 molecular dynamics simulations of molecules and solids by the spanish group, https://departments.icmab.es/ 
-(Ref. 1, 2). It is compiled for MPI parallel environment. 
-It is compiled for Intel's vector-parallel compiler, where the points of arch.make in CC, FC and LIBS 
-are shown in PDF here. But, it is needed to go through more steps due to complexity.
+(Ref. 1, 2). It is compiled for MPI parallel environments. 
+It is also compiled by Intel's vector-and-parallel compiler, where the points of arch.make in CC, FC and LIBS 
+are written in PDF here. But, it is needed to go through more steps due to complexity.
 
   We can successfully compile the gfortran siesta-4.1-b4 with mpi-3.2, scalapack 2.0, and OpenBLAS-0.3.13 for 
 the parallel version. The file named siesta-4.1-b4gcc.tar.gz is unzipped, do "sh ../Src/obj_setup.sh", 
