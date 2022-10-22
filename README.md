@@ -13,9 +13,9 @@ to the PC system bofore the "make" step is executed.
 
 The zipped files of mpi-3.2, scalapack 2.0, and OpenBLAS-0.3.13 are downloaded at the internet sites.
 If they are not yet installed, unzip and work for MPI, Scalapack and OpenBLAS directories separately.
-It is very important that generic gfortran compiler must be used throughout the configure and make steps.  
-The are cases available for the "make" time; the file "arch.make-2" in this directory shows a template 
-for "arch.make" of MPI or OMP. You should test which one is most efficient in the gfortran run. 
+It is very important that generic gfortran compiler must be used throughout the configure and make 
+steps. For the "make" step, the file "arch.make-2" in this directory shows a template for "arch.make" of 
+MPI or OMP. You should test which one is most efficient in the gfortran run. 
 
 For NEC's Intel vector-parallel compiler, however, one has the specified MPI and Scalapack packages 
 and needs to go through more steps. The arch.make script is shown in (3) of "arch.make-2".
