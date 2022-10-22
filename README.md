@@ -15,7 +15,7 @@ The zipped files of mpi-3.2, scalapack 2.0, and OpenBLAS-0.3.13 are downloaded a
 If they are not yet installed, unzip and work for MPI, Scalapack and OpenBLAS directories separately.
 In OpenBLAS, Makefile.rules may be configured manually before the make step. 
 It is very important that generic gfortran compiler must be used throughout the configure and make 
-steps. The PGI fortran is not successfully compiled for the SIESTA code. For the "make" step, 
+steps. The PGI fortran is not successfully used for the SIESTA code. For the "make" step, 
 the file "arch.make-2" in this directory shows a template for "arch.make" of MPI or OMP. You should 
 test which one is most efficient in the gfortran run. 
 
