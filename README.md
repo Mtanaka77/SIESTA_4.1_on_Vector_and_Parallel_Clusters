@@ -15,11 +15,12 @@ If they are not yet installed, unzip and work for MPI, Scalapack and OpenBLAS di
 The are cases available for the "make" time; the file "arch.make-2" in this directory shows 
 a template for "arch.make" of MPI or OMP. You should test which one is most efficient in the gfortran run. 
 
-For NEC's Intel vector-parallel version, however, one has the specified MPI and Scalapack packages 
-and needs to go through more steps. The modified changes are summarized in "Annual Report (2021)" of
-this page; the important lines to note are shown in English, so you may not miss the points. 
-The files are already modified in "arch.make", siesta-4.1-b4-LX.tar.gz is unzipped, and the make step 
-is executed (Ref. 3).
+For NEC's Intel vector-parallel compiler, however, one has the specified MPI and Scalapack packages 
+and needs to go through more steps. The arch.make script is shown in (3) of "arch.make-2".
+The modified changes are summarized in "Annual Report (2021)" of this page; the important lines to note 
+are shown in English, so you may not miss the points. 
+The files are already corrected in "arch.make" and siesta-4.1-b4-LX.tar.gz.
+It is unzipped and do the sh script, and the make step is executed at ~/siesta-4.1-b4-LX/Obj (Ref. 3).
 
 References:
 
