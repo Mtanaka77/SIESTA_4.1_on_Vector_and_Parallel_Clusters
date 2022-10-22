@@ -18,7 +18,7 @@ steps. For the "make" step, the file "arch.make-2" in this directory shows a tem
 MPI or OMP. You should test which one is most efficient in the gfortran run. 
 
 For NEC's Intel vector-parallel compiler, however, one has the specified MPI and Scalapack packages 
-and needs to go through more steps. The arch.make script is shown in (3) of "arch.make-2".
+and needs to go through more steps. The arch.make script is shown as (3) of "arch.make-2".
 The modified changes are summarized in "Annual Report (2021)" of this page; the important lines to note 
 are shown in English, so you may not miss the points. 
 The files are already corrected in "arch.make" and siesta-4.1-b4-LX.tar.gz.
