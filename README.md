@@ -28,7 +28,7 @@ and needs to rewrite more steps. The arch.make script is shown as (3) of "arch.m
 the modified changes are summarized in "Annual Report (2021)" of this page. The important and
 necessary changes are shown there in English, so you may not miss the points. 
 The files are already corrected in "arch.make" and siesta-4.1-b4-LX.tar.gz.
-It is unzipped and does the sh script, and the make step is executed at ~/siesta-4.1-b4-LX/Obj (Ref. 3).
+It is unzipped and does the sh script, and the "make" step is executed for ~/siesta-4.1-b4-LX/Obj (Ref. 3).
 
 References:
 
