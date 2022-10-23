@@ -13,6 +13,9 @@ must be installed to the PC system bofore the "make" step is executed.
 
 The zipped files of mpi-3.2, scalapack 2.0, and OpenBLAS-0.3.13 are downloaded at the internet sites.
 If they are not yet installed, unzip and work for MPI, Scalapack and OpenBLAS directories separately.
+In MPI one has configure: "env CC=gcc FC=/opt/mpich-3.2/bin/mpifort F77=gfortran CXX=gcpp CFLAGS=-O2 
+FCFLAGS=-O2 FFLAGS=-O2 CXXFLAGS=-O2 ./configure --prefix=/opt/mpich-3.2 --disable-cxx & conf.log"
+and does "make".
 In OpenBLAS, Makefile.rules may be configured manually before the make step. 
 It is very important that generic gfortran compiler must be used throughout the configure and make 
 steps. The PGI fortran is not successfully used for the SIESTA code. For the "make" step, 
