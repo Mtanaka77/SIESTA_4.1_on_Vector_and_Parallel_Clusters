@@ -16,7 +16,7 @@ If they are not yet installed, unzip and work for MPI, Scalapack and OpenBLAS di
 In MPI one has configure: "env CC=gcc FC=/opt/mpich-3.2/bin/mpifort F77=gfortran CXX=gcpp CFLAGS=-O2 
 FCFLAGS=-O2 FFLAGS=-O2 CXXFLAGS=-O2 ./configure --prefix=/opt/mpich-3.2 --disable-cxx & conf.log"
 and does "make". In Scalapack, "SLmake.inc" is changed as one wishes.
-In OpenBLAS, Makefile.rules may be configured manually before the make step. 
+In OpenBLAS, "Makefile.rule" may be configured manually before the make step. 
 It is very important that generic gfortran compiler must be used throughout the configure and make 
 steps. The PGI fortran is not successfully used for the SIESTA code. For the "make" step, 
 the file "arch.make-2" in this directory shows a template for "arch.make" of MPI or OMP. You should 
