@@ -9,10 +9,11 @@ are written in PDF here. But, it needs to go through more steps due to complexit
   We can successfully compile the gfortran siesta-4.1-b4 with mpi-3.2, scalapack 2.0, and OpenBLAS-0.3.13 for 
 the parallel version. The file named siesta-4.1-b4gcc.tar.gz is unzipped, do "sh ../Src/obj_setup.sh", 
 and copy "arch.make" of "arch.make-2" (1) or (2) to "Obj". The three packages including mpi-3.2 above 
-must be installed to the PC system bofore the "make" step is executed. 
+must be installed to the PC system bofore the "make" steps are executed. 
 
 The zipped files of mpi-3.2, scalapack 2.0, and OpenBLAS-0.3.13 are downloaded at the internet sites.
-If they are not yet installed, unzip and work for MPI, Scalapack and OpenBLAS directories separately.
+If they are not yet installed, unzip, then "make" and "make install" for MPI, Scalapack and OpenBLAS 
+directories separately.
 In MPI one has configure: "env CC=gcc FC=/opt/mpich-3.2/bin/mpifort F77=gfortran CXX=gcpp CFLAGS=-O2 
 FCFLAGS=-O2 FFLAGS=-O2 CXXFLAGS=-O2 ./configure --prefix=/opt/mpich-3.2 --disable-cxx & conf.log"
 and does "make". In Scalapack, "SLmake.inc" is changed as one wishes.
