@@ -19,9 +19,9 @@ CFLAGS=-O2 FCFLAGS=-O2 FFLAGS=-O2 CXXFLAGS=-O2 ./configure --prefix=/opt/mpich-3
 and the "make" steps. In Scalapack, "SLmake.inc" is changed as one wishes.
 In OpenBLAS, "Makefile.rule" may be configured manually before the make steps. 
 It is very important that generic gfortran compiler must be used throughout the configure and make 
-steps. The PGI fortran is not successfully used for the SIESTA code. For the "make" step, 
-the file "arch.make-2" in this directory shows a template for "arch.make" of MPI or OMP. You should 
-test which one is most efficient in the gfortran run. 
+steps. The PGI fortran is not successfully done "make" for the SIESTA code. 
+After the installation, the file "arch.make-2" in this directory shows a template for "arch.make" 
+of MPI or OMP. You should test which one is most efficient in the gfortran run. 
 
 For NEC's Intel vector-parallel compiler, however, one has the specified MPI and Scalapack packages 
 and needs to rewrite more steps. The arch.make script is shown as (3) of "arch.make-2", and 
