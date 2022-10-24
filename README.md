@@ -15,7 +15,7 @@ The run of CH4 molecules is tested in the directory ~/siesta-4.1-b4-LX/Examples/
 References:
 
 1. J. M. Soler et al., J. Phys. Cond. Matt. 14, 2745 (2002).
-2. Chem. Phys. 152, 204108 (2020).
+2. A. García et al., Chem. Phys. 152, 204108 (2020).
 3. M. Tanaka and Y. Zempo, Annual Report of National Institute for Fusion Science, R03/275 (2021) *).
 
    [important points and figures in English, mostly in Japanese]
