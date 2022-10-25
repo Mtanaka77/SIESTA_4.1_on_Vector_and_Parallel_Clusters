@@ -9,7 +9,7 @@ The zipped files of mpi-3.2, scalapack 2.0, and OpenBLAS-0.3.13 are downloaded a
 After the installation, the file "arch.make-2" in this directory has a template for "arch.make" of MPI or OMP. You should test which one is most efficient in the gfortran run.
 It is very important that generic gfortran compiler must be used throughout the configure and make steps. The PGI fortran is not successfully executed for the SIESTA code; moreover, "fortran" points to different compilers which mixes up executions !
 
-For NEC's Intel vector-parallel compiler, however, one has the specified MPI and Scalapack packages and needs to rewrite more steps. The arch.make script is shown as (3) of "arch.make-2", and the modified changes are summarized in "Annual Report (2021)" of this page. The important and necessary changes and figures are shown there in English, so you may not miss the points. The files are already corrected in "arch.make" and siesta-4.1-b4-LX.tar.gz. It is unzipped and does the shell script, and the "make" step is executed for ~/siesta-4.1-b4-LX/Obj (Ref. 3).
+For NEC's Intel vector-parallel compiler, however, one has the specified MPI and Scalapack packages, and needs to rewrite more steps. The arch.make script is shown as (3) of "arch.make-2", and the modified changes are summarized in "Annual Report (2021)" of this page. The important and necessary changes and figures as well are shown partly in English, so you may not miss the points. The files are already corrected in "arch.make" and siesta-4.1-b4-LX.tar.gz. It is unzipped and does the shell script, and the "make" step is executed in ~/siesta-4.1-b4-LX/Obj (Ref. 3).
 The run of CH4 molecules is tested in the directory ~/siesta-4.1-b4-LX/Examples/C96H384-MD35.
 
 References:
