@@ -2,9 +2,9 @@
 
 Ab initio SIESTA simulation code is implemented for electronic structure calculations and ab initio molecular dynamics simulations of molecules and solids by the spanish group, https://departments.icmab.es/ (Ref. 1, 2). It is compiled by the gfortran compiler and for MPI parallel environments. It is also compiled by Intel's vector-and-parallel compiler, where the points of arch.make in CC, FC and LIBS are written here in PDF file. But, more things have to be changed due to vectorized complexity.
 
-We can successfully compile by gfortran and the siesta-4.1-b4 Obj directory with mpi-3.2, scalapack 2.0, and OpenBLAS-0.3.13 for the parallel version. The file named "siesta-4.1-b4gcc.tar.gz" is unzipped, do "sh ../Src/obj_setup.sh", and copy "arch.make" of "arch.make-2" (1) or (2) scripts. The three packages including mpi-3.2 above must be installed to the PC system bofore the "make" steps are executed.
-
 ## Parallel Compiler ##
+
+We can successfully compile by gfortran and the siesta-4.1-b4 Obj directory with mpi-3.2, scalapack 2.0, and OpenBLAS-0.3.13 for the parallel version. The file named "siesta-4.1-b4gcc.tar.gz" is unzipped, do "sh ../Src/obj_setup.sh", and copy "arch.make" of "arch.make-2" (1) or (2) scripts. The three packages including mpi-3.2 above must be installed to the PC system bofore the "make" steps are executed.
 
 The zipped files of mpi-3.2, scalapack 2.0, and OpenBLAS-0.3.13 are downloaded at the internet sites. If they are not yet installed in one's PC, unzip and "make", and "make install" for MPI, Scalapack and OpenBLAS directories separately. 
 In MPI, one may use the configure script: "env CC=gcc FC=/opt/mpich-3.2/bin/mpifort F77=gfortran CXX=gcpp CFLAGS=-O2 FCFLAGS=-O2 FFLAGS=-O2 CXXFLAGS=-O2 ./configure --prefix=/opt/mpich-3.2 --disable-cxx & conf.log" and go to the "make" steps. In Scalapack, "SLmake.inc" is changed to one's PC environments. In OpenBLAS, "Makefile.rule" may be configured manually before the make steps. 
