@@ -13,8 +13,8 @@ After the installation, one should test which choice of MPI or OMP is most effic
 It is very important that generic gfortran compiler must be used throughout the configure and make steps. The PGI fortran is not successfully executed for the SIESTA code; moreover, "fortran" points to different compilers which mixes up executions !
 
 ### Execution Scripts ###
-
-#!/bin/bash
+ 
+#!/bin/bash  <- make by gfortran, and mpiexec
 
 $ mpiexec -n 6 ~/siesta-4.1-b4gcc/Obj/siesta c12h48.fdf > c12h48.out &
 
