@@ -14,11 +14,11 @@ It is very important that generic gfortran compiler must be used throughout the 
 
 ### Execution Scripts ###
  
-#!/bin/bash  <- make by gfortran, and mpiexec
+env CC=gcc FC=/opt/mpich-3.2/bin/mpifort F77=gfortran CXX=gcpp CFLAGS=-O2 FCFLAGS=-O2 FFLAGS=-O2 CXXFLAGS=-O2 ./configure --prefix=/opt/mpich-3.2 --disable-cxx & conf.log
 
-$ mpiexec -n 6 ~/siesta-4.1-b4gcc/Obj/siesta c12h48.fdf > c12h48.out &
+CC=gcc FC=gfortran F90=mpifort ./configure --prefix=/opt/fftw3
 
-exit 0
+#!/bin/bash  $ mpiexec -n 6 ~/siesta-4.1-b4gcc/Obj/siesta c12h48.fdf > c12h48.out &  exit 0
 
 
 ### Special Vector-Parallel Compiler ###
