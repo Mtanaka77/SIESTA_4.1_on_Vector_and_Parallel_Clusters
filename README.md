@@ -20,6 +20,7 @@ $ mpiexec -n 6 ~/siesta-4.1-b4gcc/Obj/siesta c12h48.fdf > c12h48.out &
 
 exit 0
 
+
 ### Special Vector-Parallel Compiler ###
 
 For NEC's Intel vector-parallel compiler, however, one has the specified MPI and Scalapack packages, and needs to rewrite more steps. The arch.make script is shown as (3) of "arch.make-2", and the modified changes are summarized in "Annual Report (2021)" of this page. The necessary changes and figures as well are shown partly in Japanese/English, so you may not miss the points. The files are corrected in "arch.make" and siesta-4.1-b4-LX.tar.gz. It is unzipped and does the shell script, and the "make" step is executed in ~/siesta-4.1-b4-LX/Obj (Ref. 3).
