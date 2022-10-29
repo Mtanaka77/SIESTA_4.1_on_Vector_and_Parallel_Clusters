@@ -15,12 +15,20 @@ It is very important that generic gfortran compiler must be used throughout the 
 ### Execution Scripts ###
  
 MPI and FFTW by gfortran; configure, make, and make install. 
- 
-mpich-3.2: env CC=gcc FC=/opt/mpich-3.2/bin/mpifort F77=gfortran CXX=gcpp CFLAGS=-O2 FCFLAGS=-O2 FFLAGS=-O2 CXXFLAGS=-O2 ./configure --prefix=/opt/mpich-3.2 --disable-cxx & conf.log
 
-fftw3-3.3.5: CC=gcc FC=gfortran F90=mpifort ./configure --prefix=/opt/fftw3
+>mpich-4.0.2: ./configure --prefix=/opt/pgi/mpich-4.0.2 2>&1 | tee conf.txt
 
-#!/bin/bash,  $ mpiexec -n 6 ~/siesta-4.1-b4gcc/Obj/siesta c12h48.fdf > c12h48.out &,  exit 0
+>fftw3-3.3.10: ./configure --disable-shared --enable-maintainer-mode --enable-threads --prefix=/opt/pgi/fftw3
+
+(Old) mpich-3.2: env CC=gcc FC=/opt/mpich-3.2/bin/mpifort F77=gfortran CXX=gcpp CFLAGS=-O2 FCFLAGS=-O2 FFLAGS=-O2 CXXFLAGS=-O2 ./configure --prefix=/opt/mpich-3.2 --disable-cxx & conf.log
+
+(Old) fftw3-3.3.5: env CC=gcc FC=gfortran F90=mpifort ./configure --prefix=/opt/fftw3
+
+>#!/bin/bash
+
+>$ mpiexec -n 6 ~/siesta-4.1-b4gcc/Obj/siesta c12h48.fdf > c12h48.out &
+
+>exit 0
 
 
 ### Special Vector-Parallel Compiler ###
