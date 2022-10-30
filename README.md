@@ -20,6 +20,8 @@ MPI and FFTW by gfortran; configure, make, and make install.
 
 >fftw3-3.3.10: ./configure --disable-shared --enable-maintainer-mode --enable-threads --prefix=/opt/fftw3
 
+>OpenBLAS-0.3.21: in Makefile.rule, VERSION = 0.3.21  LIBNAMESUFFIX = omp ...
+
 (Old) mpich-3.2: env CC=gcc FC=/opt/mpich-3.2/bin/mpifort F77=gfortran CXX=gcpp CFLAGS=-O2 FCFLAGS=-O2 FFLAGS=-O2 CXXFLAGS=-O2 ./configure --prefix=/opt/mpich-3.2 --disable-cxx & conf.log
 
 (Old) fftw3-3.3.5: env CC=gcc FC=gfortran F90=mpifort ./configure --prefix=/opt/fftw3
