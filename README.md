@@ -4,7 +4,7 @@ Ab initio SIESTA simulation code is implemented for electronic structure calcula
 
 ### Generic Parallel Compiler ###
 
-We can successfully compile by gfortran and the siesta-4.1-b4 Obj directory with mpich, ScaLapack, and OpenBLAS for the parallel version. The file named "siesta-4.1-b4gcc.tar.gz" is unzipped, do "sh ../Src/obj_setup.sh", and copy "arch.make" of "arch.make-2" (1) or (2) scripts. The three packages including mpich above must be installed to the PC system bofore the "make" steps are executed.
+We can compile the siesta-4.1-b4 Obj directory by gfortran with mpich, ScaLapack, and OpenBLAS for the parallel version. The file named "siesta-4.1-b4gcc.tar.gz" is unzipped, do "sh ../Src/obj_setup.sh", and copy "arch.make" of "arch.make-2" (1) or (2) scripts. The three packages including mpich above must be installed to the PC system bofore the "make" steps of SIESTA are executed.
 
 The zipped files of mpi-4.0.2, scalapack-2.2.0, and OpenBLAS-0.3.21 (now in 2022) are downloaded at the internet sites. If they are not yet installed in one's PC, unzip and "make", and "make install" for MPI, ScaLapack and OpenBLAS directories separately. 
 In MPICH, one may use the configure script: "./configure --prefix=/opt/mpich-4.0.2" and go to the "make" steps. In ScaLapack, "SLmake.inc" in that directory is changed to one's PC environments. In OpenBLAS, "Makefile.rule" may be configured manually before the make steps. 
