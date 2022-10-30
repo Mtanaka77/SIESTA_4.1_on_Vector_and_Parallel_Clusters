@@ -10,7 +10,7 @@ The zipped files of mpi-4.0.2, scalapack-2.2.0, and OpenBLAS-0.3.21 (now in 2022
 In MPICH, one may use the configure script: "./configure --prefix=/opt/mpich-4.0.2" and go to the "make" steps. In ScaLapack, "SLmake.inc" in that directory is changed to one's PC environments. In OpenBLAS, "Makefile.rule" may be configured manually before the make steps. 
 
 After the installation, one should test which choice of MPI or OMP is most efficient in the gfortran run.
-It is very important that generic gfortran compiler must be used throughout the configure and make steps. The PGI fortran is not compatible with the SIESTA code; moreover, "fortran" points to different compilers in general cases !
+It is very important that generic gfortran compiler must be used throughout the configure and make steps. The PGI fortran does not comple the SIESTA code; moreover, "fortran" points to different compilers in general cases !
 
 ### Execution Scripts ###
  
