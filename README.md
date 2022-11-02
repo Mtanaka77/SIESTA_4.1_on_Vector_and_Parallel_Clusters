@@ -1,6 +1,6 @@
 ## Ab-initio SIESTA-4.1b Molecular Dynamics on Parallel or/and Vector Machines ##
 
-Ab initio SIESTA simulation code is implemented for electronic structure calculations and ab initio molecular dynamics simulations of molecules and solids by the spanish group, https://departments.icmab.es/ (Ref. 1, 2). It is compiled by the gfortran compiler and for MPI parallel environments. It is also compiled by Intel's vector-and-parallel compiler, where the points of arch.make in CC, FC and LIBS are written here in PDF file. But, more things have to be changed due to vectorized complexity.
+Ab initio SIESTA simulation code is implemented for electronic structure calculations and ab initio molecular dynamics simulations of molecules and solids by the spanish group, https://departments.icmab.es/ (Ref. 1, 2). It is compiled by the gfortran compiler and for MPI parallel environments. It is also compiled by Intel's vector-and-parallel compiler, where the points of arch.make in CC, FC and LIBS are shown here in the PDF file. But, more things have to be changed and added due to vectorized complexity.
 
 ### Generic Parallel Compiler ###
 
@@ -33,7 +33,7 @@ MPI and ScaLapack by gfortran; configure, make, and make install. Not compatible
 
 ### Special Vector-Parallel Compiler ###
 
-For NEC's Intel vector-parallel compiler, however, one has the specified MPI and Scalapack packages, and needs to rewrite more steps. The arch.make script is shown as (3) of "arch.make-2", and the modified changes are summarized in "Annual Report (2021)" (PDF) of this page. The necessary changes and figures as well are shown in Japanese/English, so you may not miss the points. The files are already corrected in "arch.make" and siesta-4.1-b4-LX.tar.gz. It is unzipped, does the shell script, and the "make" step is executed in ~/siesta-4.1-b4-LX/Obj (Ref. 3). The run of CH4 molecules is tested with 48 cores in the directory ~/siesta-4.1-b4-LX/Examples/C96H384-MD35 (figures in Ref. 3).
+For the Intel vector-parallel compiler supplied by NEC, however, one has the specified MPI and Scalapack packages, and needs to rewrite more steps due to exact fortran coding. The arch.make script is shown as (3) of "arch.make-2", and the modified changes are summarized in "Annual Report (2021)" (PDF) of this page. The necessary changes and figures as well are shown in Japanese/English, so you may not miss the points. The files are already corrected in "arch.make" and siesta-4.1-b4-LX.tar.gz. It is unzipped, does the shell script, and the "make" step is executed in ~/siesta-4.1-b4-LX/Obj (Ref. 3). The run of CH4 molecules is tested with 48 cores in the directory ~/siesta-4.1-b4-LX/Examples/C96H384-MD35 (figures in Ref. 3).
 
 ### References: ###
 
