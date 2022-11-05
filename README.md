@@ -33,7 +33,7 @@ MPI and ScaLapack by gfortran; configure, make, and make install (packages are i
 
 ### Special Vector-Parallel Compiler ###
 
-For the Intel vector-parallel compiler supplied by NEC, however, one has the specified MPI and Scalapack packages, and needs to rewrite more steps due to exact fortran coding. The arch.make script is shown as (3) of "arch.make-2", and the modified changes are summarized in "Annual Report (2021)" (PDF) of this page. The necessary changes and figures as well are shown in Japanese/English, so you may not miss the points. The files are already corrected in "arch.make" and siesta-4.1-b4-LX.tar.gz. It is unzipped, does the shell script, and the "make" step is executed in ~/siesta-4.1-b4-LX/Obj (Ref. 3). The run of CH4 molecules is tested with 48 cores in the directory ~/siesta-4.1-b4-LX/Examples/C96H384-MD35 (figures in Ref. 3).
+For the Intel vector-parallel compiler supplied by NEC, however, one has the specified MPI and Scalapack packages, and needs to rewrite more steps due to exact fortran coding. The arch.make script is shown as (3) of "arch.make-2", and the modified changes are summarized in "Annual Report (2021)" (PDF) of this page. The necessary changes and figures as well are shown in Japanese/English, so you may not miss the points. The files are already corrected in "arch.make" and siesta-4.1-b4-LX.tar.gz. It is unzipped, does the shell script, and the "make" step is executed in ~/siesta-4.1-b4-LX/Obj (Ref. 3). The run of CH4 molecules is tested with the vector/parallel computer of 48 cores in the directory ~/siesta-4.1-b4-LX/Examples/C96H384-MD35 (figures in Ref. 3).
 
 ### References: ###
 
