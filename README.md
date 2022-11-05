@@ -14,13 +14,13 @@ It is very important that generic gfortran compiler must be used throughout the 
 
 ### Execution Scripts ###
  
-MPI and ScaLapack by gfortran; configure, make, and make install. Not compatible with PGI fortran.
+MPI and ScaLapack by gfortran; configure, make, and make install (packages are in 2022). Not compatible with the PGI fortran.
 
 >mpich-4.0.2: ./configure --prefix=/opt/mpich-4.0.2 2>&1 | tee conf.txt
 
 >OpenBLAS-0.3.21: in Makefile.rule, VERSION= 0.3.21  LIBNAMESUFFIX= omp ...
 
->ScaLapack: in SLmake.inc, CDEFS= -DAdd_  FC= mpifort  CC= mpicc ...
+>ScaLapack-2.2.0: in SLmake.inc, CDEFS= -DAdd_  FC= mpifort  CC= mpicc ...
 
 (Old) mpich-3.2: env CC=gcc FC=/opt/mpich-3.2/bin/mpifort F77=gfortran CXX=gcpp CFLAGS=-O2 FCFLAGS=-O2 FFLAGS=-O2 CXXFLAGS=-O2 ./configure --prefix=/opt/mpich-3.2 --disable-cxx & conf.log
 
