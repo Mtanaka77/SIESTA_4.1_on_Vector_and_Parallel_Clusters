@@ -14,7 +14,8 @@ It is very important that generic gfortran compiler must be used throughout the 
 
 ### Execution Scripts ###
  
-MPI and ScaLapack by gfortran; configure, make, and make install (packages are in 2022). Not compatible with the PGI fortran.
+MPI and ScaLapack by gfortran; configure, make, and make install (packages are in winter 2022). 
+Not compatible with the PGI fortran.
 
 >mpich-4.0.2: ./configure --prefix=/opt/mpich-4.0.2 2>&1 | tee conf.txt
 
