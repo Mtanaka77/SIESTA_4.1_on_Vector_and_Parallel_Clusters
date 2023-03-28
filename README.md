@@ -1,6 +1,6 @@
 ## Ab-initio SIESTA-4.1b Molecular Dynamics on Parallel or/and Vector Machines ##
 
-Ab initio SIESTA simulation code is implemented for electronic structure calculations and ab-initio molecular dynamics simulations of molecules and solids by the spanish group, https://departments.icmab.es/ (Ref. 1, 2). It is compiled by the gfortran compiler and for MPI parallel environments. It is also compiled by Intel's vector-and-parallel compiler, where the points of arch.make in CC, FC and LIBS are shown here in our PDF file. More things have to be modified and added due to vectorized complexity.
+"Ab initio SIESTA simulation code" is implemented for electronic structure calculations and ab-initio molecular dynamics simulations of molecules and solids by the spanish authors, in https://departments.icmab.es/ (Ref. 1, 2). It is compiled by the gfortran compiler and for MPI parallel environments. It is also compiled by Intel's vector-and-parallel compiler, where the points of arch.make in CC, FC and LIBS are shown here in our PDF file. More things have to be modified and added due to vectorized complexity.
 
 ### Generic Parallel SIESTA Code ###
 
