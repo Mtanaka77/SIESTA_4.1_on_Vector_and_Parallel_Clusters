@@ -6,11 +6,10 @@
 
 We can compile the siesta-4.1-b4 directory by gfortran for the parallel version with mpich, ScaLapack, and OpenBLAS. The file named "siesta-4.1-b4gcc.tar.gz" is unzipped, do "sh ../Src/obj_setup.sh", and copy "arch.make" of "arch.make-2" (1) or (2) script to your machine. The three packages including mpich above must be installed to your system bofore the "make" steps of SIESTA are executed.
 
-The zipped files of mpi-4.0.2, scalapack-2.2.0, and OpenBLAS-0.3.21 (now in winter, 2022) are downloaded at the internet sites. If they are not yet installed in one's PC, unzip and "make", and "make install" for MPI, ScaLapack and OpenBLAS directories separately. 
-In MPICH, one may use the configure script: "./configure --prefix=/opt/mpich-4.0.2" and go to the "make" steps. In ScaLapack, "SLmake.inc" in that directory is changed to one's PC environments. In OpenBLAS, "Makefile.rule" may be configured manually before the make steps. 
+The zipped files of mpi-4.0.2, scalapack-2.2.0, and OpenBLAS-0.3.21 (now in winter, 2022) are downloaded at the internet sites. If they are not yet installed in your system, unzip and "make", and "make install" separately for MPI, ScaLapack and OpenBLAS directories. 
+To compile the MPICH, one may use the configure script: "./configure --prefix=/opt/mpich-4.0.2" and go to the "make" step. In the ScaLapack, "SLmake.inc" in that directory may be changed to your PC environments. In the OpenBLAS, "Makefile.rule" may be configured manually before the make step. 
 
-After the installation, one should test which choice of MPI or OMP is most efficient in the gfortran run.
-It is very important that generic gfortran compiler must be used throughout the configure and make steps. The PGI fortran does not compile the SIESTA code properly. 
+After the installation step, one should test which choice of MPI or OMP is most efficient in the gfortran run. It is very important that generic gfortran compiler must be used throughout the configure and make steps. The PGI fortran does not compile the SIESTA code properly. 
 
 ### Execution Scripts ###
  
