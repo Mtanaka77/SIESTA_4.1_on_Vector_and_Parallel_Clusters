@@ -11,6 +11,12 @@ To compile the MPICH, one may use the configure script: "./configure --prefix=/o
 
 After the installation step, one should test which choice of MPI or OMP is most efficient in the gfortran run. It is very important that generic gfortran compiler must be used throughout the configure and make steps. The PGI fortran does not compile the SIESTA code properly. 
 
+
+### Special Vector-Parallel SIESTA Code ###
+
+For the Intel vector-parallel compiler supplied by NEC, however, it has the specified MPI and Scalapack packages, but one needs to rewrite more steps due to exact fortran coding. The arch.make script is shown as (3) of "arch.make-2", and the modified changes are summarized in "Annual Report (2021)" (PDF) of this page. The necessary changes and figures as well are shown in Japanese/English, so you may not miss the points. The files are already corrected in "arch.make" and siesta-4.1-b4-LX.tar.gz. It is unzipped, does the shell script, and the "make" step is executed in ~/siesta-4.1-b4-LX/Obj (Ref. 3). The run of CH4 molecules is tested with the vector/parallel computer of 48 cores in the directory ~/siesta-4.1-b4-LX/Examples/C96H384-MD35 (figures in Ref. 3).
+
+
 ### Execution Scripts ###
  
 MPI and ScaLapack by gfortran; configure, make, and make install (packages are in winter 2022). 
@@ -25,11 +31,6 @@ Not compatible with the PGI fortran.
 For an example: 
 
 >#!/bin/bash; mpiexec -n 6 ~/siesta-4.1-b4gcc/Obj/siesta c12h48.fdf > c12h48.out &; exit 0
-
-
-### Special Vector-Parallel SIESTA Code ###
-
-For the Intel vector-parallel compiler supplied by NEC, however, it has the specified MPI and Scalapack packages, but one needs to rewrite more steps due to exact fortran coding. The arch.make script is shown as (3) of "arch.make-2", and the modified changes are summarized in "Annual Report (2021)" (PDF) of this page. The necessary changes and figures as well are shown in Japanese/English, so you may not miss the points. The files are already corrected in "arch.make" and siesta-4.1-b4-LX.tar.gz. It is unzipped, does the shell script, and the "make" step is executed in ~/siesta-4.1-b4-LX/Obj (Ref. 3). The run of CH4 molecules is tested with the vector/parallel computer of 48 cores in the directory ~/siesta-4.1-b4-LX/Examples/C96H384-MD35 (figures in Ref. 3).
 
 ### References: ###
 
