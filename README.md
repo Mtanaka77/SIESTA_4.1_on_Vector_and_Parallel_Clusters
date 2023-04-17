@@ -41,6 +41,6 @@ For an example:
 2. A. García et al., Chem. Phys. 152, 204108 (2020).
 3. M. Tanaka and Y. Zempo, Annual Report of National Institute for Fusion Science, R03/275 (2021) *).
 
-   [important points and figures in English, otherwise in Japanese]
+[Important points and figures are written in English, otherwise in Japanese]
 
 
