@@ -1,11 +1,10 @@
 ## Ab-initio SIESTA-4.1b Molecular Dynamics on Parallel or/and Vector Machines ##
 
-As "Open Internet Access by Molecular Dynamics Simulations", a couple of various codes are shown in https://github.com/Mtanaka77/, which are "Relativistic and Electromagnetic Molecular Dynamics Simulation for Nanoscale Phenomena", "Large-scale Electromagnetic Particle-in-Cell Simulation", and "SIESTA on Vector-Parallel Clusters". This page is discussed on the vector-parallel SIESTA code. Please visit other companion pages other than this "SIESTA on Vector-Parallel Clusters".
-
-
-"Ab initio SIESTA simulation code" is implemented for electronic structure calculations and ab-initio molecular dynamics simulations of molecules and solids by the spanish authors, in https://departments.icmab.es/ (Ref. 1, 2). It is compiled by the gfortran compiler and for MPI parallel environments. It is also compiled by Intel's vector-and-parallel compiler, where the points of arch.make in CC, FC and LIBS are shown here in our PDF file. More things have to be modified and added due to vectorized complexity.
+As "Open Internet Access by Molecular Dynamics Simulations", a couple of various codes are shown in https://github.com/Mtanaka77/, which are "Relativistic and Electromagnetic Molecular Dynamics Simulation for Nanoscale Phenomena", "Large-scale Electromagnetic Particle-in-Cell Simulation", and "SIESTA on Vector-Parallel Clusters". This page is discussed on the vector-parallel SIESTA code. Please visit other companion pages except for this "SIESTA on Vector-Parallel Clusters".
 
 ### Generic Parallel SIESTA Code ###
+
+"Ab initio SIESTA simulation code" is implemented for electronic structure calculations and ab-initio molecular dynamics simulations of molecules and solids by the spanish authors, in https://departments.icmab.es/ (Ref. 1, 2). It is compiled by the gfortran compiler and for MPI parallel environments. It is also compiled by Intel's vector-and-parallel compiler, where the points of arch.make in CC, FC and LIBS are shown here in our PDF file. More things have to be modified and added due to vectorized complexity.
 
 We can compile the siesta-4.1-b4 directory by gfortran for the parallel version with mpich, ScaLapack, and OpenBLAS. The file named "siesta-4.1-b4gcc.tar.gz" is unzipped, do "sh ../Src/obj_setup.sh", and copy "arch.make" of "arch.make-2" (1) or (2) script to your machine. The three packages including mpich above must be installed to your system bofore the "make" steps of SIESTA are executed.
 
