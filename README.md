@@ -1,6 +1,6 @@
 ## Ab-initio SIESTA-4.1b Molecular Dynamics on Parallel or/and Vector Machines ##
 
-As "Open Internet Access by Molecular Dynamics Simulations", a couple of various codes are shown in https://github.com/Mtanaka77/, which are "Relativistic and Electromagnetic Molecular Dynamics Simulation for Nanoscale Phenomena", "Large-scale Electromagnetic Particle-in-Cell Simulation", and "SIESTA on Vector-Parallel Clusters". This page is discussed on the vector-parallel SIESTA code. Please visit other companion pages except for this "SIESTA on Vector-Parallel Clusters".
+As "Open Internet Access by Molecular Dynamics Simulations", a couple of various codes are shown in https://github.com/Mtanaka77/, which are "Relativistic and Electromagnetic Molecular Dynamics Simulation for Nanoscale Phenomena", "Large-scale Electromagnetic Particle-in-Cell Simulation", and "SIESTA on Vector-Parallel Clusters". This page is discussed on the vector-parallel SIESTA code. Please visit other companion pages on top of "SIESTA on Vector-Parallel Clusters".
 
 ### Generic Parallel SIESTA Code ###
 
