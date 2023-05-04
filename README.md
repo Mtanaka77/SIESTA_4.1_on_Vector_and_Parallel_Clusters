@@ -24,55 +24,33 @@ First, we download the SIESTA-4.1b code by internet. On our Linux, we do 'tar -x
 Under the NEC's compiler, we invoke the 'module load intel-lx', and do 'sh ../Src/obj_setup.sh' for SIESTA Obj directory.
 The siesta-4.1b's MPICH+OMP script should be, 
 
-  CC= mpiicc -O2 -qopenmp  
-  
-  FPP= $(FC) -E -P -x c
-
-  FC= mpiifort
-
-  MPI_INTERFACE = libmpi_f90.a
-
-  MPI_INCLUDE = .
-
-  FC_SERIAL= ifort
-
-  FFLAGS = -O2 -fPIC -qopenmp
-
-  LIBS =  -L${MKLROOT}/lib/intel64 -lmkl_scalapack_lp64 -lmkl_intel_lp64 -lmkl_sequential -lmkl_core   -lmkl_blacs_intelmpi_lp64 -mkl -qopenmp -lpthread -lm -ldl
+  >CC= mpiicc -O2 -qopenmp  
+  >FPP= $(FC) -E -P -x c
+  >FC= mpiifort
+  >MPI_INTERFACE = libmpi_f90.a
+  >MPI_INCLUDE = .
+  >FC_SERIAL= ifort
+  >FFLAGS = -O2 -fPIC -qopenmp
+  >LIBS =  -L${MKLROOT}/lib/intel64 -lmkl_scalapack_lp64 -lmkl_intel_lp64 -lmkl_sequential -lmkl_core   -lmkl_blacs_intelmpi_lp64 -mkl -qopenmp -lpthread -lm -ldl
 
 Then, one proceeds the 'make' step. For NEC's own compiler problems, one must add additional terms. For the six files including "iokp.f", "m_mixing.F90", "m_ts_contour_neq.f90", "m_ts_electype.F90",  "m_ts_weight.F90" and " ofc.f90", one changes the correct statement as 'e12.6' by 'e13.6'. Next point is that one must omit the $OMP lines of "inal_H_f_stress.F" as:
 
-  !!$OMP parallel default(shared)
-  
-  !!$OMP workshare
-  
-  H_tmp = 0.0_dp
-
-  !!$OMP end workshare nowait
-
-  !!$OMP single
-
-  !  Initialize forces and stress ...................
-  
-  nullify(fal)
-      
-  call re_alloc( fal, 1, 3, 1, na_u, 'fal', 'final_H_f_stress' )
-
-  !!$OMP end single
-
-  !!$OMP workshare
-  
-  fa(1:3,1:na_u) = 0.0_dp
-  
-  fal(1:3,1:na_u) = 0.0_dp
-      
-  stress(1:3,1:3) = 0.0_dp
-      
-  stressl(1:3,1:3) = 0.0_dp
-
-  !!$OMP end workshare nowait
-
-  !!$OMP end parallel
+  >!!$OMP parallel default(shared)
+  >!!$OMP workshare
+  >H_tmp = 0.0_dp
+  >!!$OMP end workshare nowait
+  >!!$OMP single
+  >!  Initialize forces and stress ...................
+  >nullify(fal) 
+  >call re_alloc( fal, 1, 3, 1, na_u, 'fal', 'final_H_f_stress' )
+  >!!$OMP end single
+  >!!$OMP workshare
+  >fa(1:3,1:na_u) = 0.0_dp
+  >fal(1:3,1:na_u) = 0.0_dp   
+  >stress(1:3,1:3) = 0.0_dp   
+  >stressl(1:3,1:3) = 0.0_dp
+  >!!$OMP end workshare nowait
+  >!!$OMP end parallel
 
 The vector lines must be changed as "novector" in the "old_atmfuncs.f" file:
 
