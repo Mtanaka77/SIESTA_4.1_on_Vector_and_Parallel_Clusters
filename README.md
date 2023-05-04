@@ -18,48 +18,86 @@ After the installation step, one should test which choice of MPI or OMP is most 
 
 For the Intel vector-parallel compiler supplied by NEC, however, it has the specified MPI and Scalapack packages, but one needs to rewrite more steps due to exact fortran coding. The arch.make script is shown as (3) of "arch.make-2", and the modified changes are summarized in "Annual Report of Tanaka and Zempo (2022)" (PDF) of this page. All the changes and figures are shown in English, so you may not miss the points. The files are already corrected in "arch.make" and siesta-4.1-b4-LX.tar.gz. It is unzipped, does the shell script, and the "make" step is executed in ~/siesta-4.1-b4-LX/Obj (Ref. 3). The run of CH4 molecules is tested with the vector-parallel computer of 48 cores in the directory ~/siesta-4.1-b4-LX/Examples/C96H384-MD35 (figures in Ref. 3).
 
-First, one downloads the SIESTA-4.1b code by internet. On our Linux, one does 'tar -xfzv siesta-4.1-b4.tar.gz'. Under the NEC's compiler, one invokes the 'module load intel-lx', and does 'sh ../Src/obj_setup.sh' for SIESTA Obj directory; one siesta-4.1b's MPICH+OMP script should be, 
-CC= mpiicc -O2 -qopenmp
-FPP= $(FC) -E -P -x c
-FC= mpiifort
-MPI_INTERFACE = libmpi_f90.a
-MPI_INCLUDE = .
-FC_SERIAL= ifort
-FFLAGS = -O2 -fPIC -qopenmp
-LIBS =  -L${MKLROOT}/lib/intel64 -lmkl_scalapack_lp64 -lmkl_intel_lp64 -lmkl_sequential -lmkl_core \
- -lmkl_blacs_intelmpi_lp64 -mkl -qopenmp -lpthread -lm -ldl
+### Points of Vector-Parallel Code ###
+
+First, we download the SIESTA-4.1b code by internet. On our Linux, we do 'tar -xfzv siesta-4.1-b4.tar.gz'. 
+Under the NEC's compiler, we invoke the 'module load intel-lx', and do 'sh ../Src/obj_setup.sh' for SIESTA Obj directory.
+The siesta-4.1b's MPICH+OMP script should be, 
+
+  CC= mpiicc -O2 -qopenmp  
+  
+  FPP= $(FC) -E -P -x c
+
+  FC= mpiifort
+
+  MPI_INTERFACE = libmpi_f90.a
+
+  MPI_INCLUDE = .
+
+  FC_SERIAL= ifort
+
+  FFLAGS = -O2 -fPIC -qopenmp
+
+  LIBS =  -L${MKLROOT}/lib/intel64 -lmkl_scalapack_lp64 -lmkl_intel_lp64 -lmkl_sequential -lmkl_core   -lmkl_blacs_intelmpi_lp64 -mkl -qopenmp -lpthread -lm -ldl
 
 Then, one proceeds the 'make' step. For NEC's own compiler problems, one must add additional terms. For the six files including "iokp.f", "m_mixing.F90", "m_ts_contour_neq.f90", "m_ts_electype.F90",  "m_ts_weight.F90" and " ofc.f90", one changes the correct statement as 'e12.6' by 'e13.6'. Next point is that one must omit the $OMP lines of "inal_H_f_stress.F" as:
-!!$OMP parallel default(shared)
-!!$OMP workshare
-      H_tmp = 0.0_dp
-!!$OMP end workshare nowait
-!!$OMP single
-!     Initialize forces and stress ...................
-      nullify(fal)
-      call re_alloc( fal, 1, 3, 1, na_u, 'fal', 'final_H_f_stress' )
-!!$OMP end single
-!!$OMP workshare
-      fa(1:3,1:na_u) = 0.0_dp
-      fal(1:3,1:na_u) = 0.0_dp
-      stress(1:3,1:3) = 0.0_dp
-      stressl(1:3,1:3) = 0.0_dp
-!!$OMP end workshare nowait
-!!$OMP end parallel
+
+  !!$OMP parallel default(shared)
+  
+  !!$OMP workshare
+  
+  H_tmp = 0.0_dp
+
+  !!$OMP end workshare nowait
+
+  !!$OMP single
+
+  !  Initialize forces and stress ...................
+  
+  nullify(fal)
+      
+  call re_alloc( fal, 1, 3, 1, na_u, 'fal', 'final_H_f_stress' )
+
+  !!$OMP end single
+
+  !!$OMP workshare
+  
+  fa(1:3,1:na_u) = 0.0_dp
+  
+  fal(1:3,1:na_u) = 0.0_dp
+      
+  stress(1:3,1:3) = 0.0_dp
+      
+  stressl(1:3,1:3) = 0.0_dp
+
+  !!$OMP end workshare nowait
+
+  !!$OMP end parallel
 
 The vector lines must be changed as "novector" in the "old_atmfuncs.f" file:
-!NEC$ novector
-          do 5 izeta=1,nzetasave(l,nsm,is)
-            norb=norb+(2*l+1)
-            indx=indx+1
-            if(norb.ge.io) goto 30
- 5        continue
+
+  !NEC$ novector
+ 
+  do 5 izeta=1,nzetasave(l,nsm,is)
+  
+  norb=norb+(2*l+1)
+  
+  indx=indx+1
+  
+  if(norb.ge.io) goto 30
+ 
+ 5 continue
+
 They are the lines at 426, 436, 492, 502, 523, 570, 580, 605, 666, 712, 724 and 756 of "old_atmfuncs.f" file.
 
-The file "normalize_dm.F90" undergoes an error, thus one just skips as '! call die(msg)' at the line 95. One compiles the rest of the code. Finally for execution, one must write:
-#PBS -v NQSV_MPI_VER= 2020update0
-#PBS -v OMP_NUM_THREADS=4
-module load intel-lx/$NQSV_MPI_VER
+The file "normalize_dm.F90" undergoes an error, thus one just skips as '! call die(msg)' at the line 95. 
+We compile the rest of the code. Finally for execution, we must write:
+
+  #PBS -v NQSV_MPI_VER= 2020update0
+
+  #PBS -v OMP_NUM_THREADS=4
+
+  module load intel-lx/$NQSV_MPI_VER
 
 
 ### Execution Scripts ###
