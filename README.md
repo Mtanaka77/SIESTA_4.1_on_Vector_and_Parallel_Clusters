@@ -91,9 +91,10 @@ The vector lines must be changed as "novector" in the "old_atmfuncs.f" file:
   >5 continue
 
 They are the lines at 426, 436, 492, 502, 523, 570, 580, 605, 666, 712, 724 and 756 of "old_atmfuncs.f" file.
-
 The file "normalize_dm.F90" undergoes an error, thus we just skips as '! call die(msg)' at the line 95. 
-We compile the rest of the code. Finally for execution, we must write:
+We compile the rest of the code. 
+
+Finally for execution, we must write:
 
   >#PBS -v NQSV_MPI_VER= 2020update0
 
