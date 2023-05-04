@@ -27,7 +27,7 @@ The siesta-4.1b's MPICH+OMP script should be,
   >CC= mpiicc -O2 -qopenmp  
   >FPP= $(FC) -E -P -x c
   >FC= mpiifort
-  >MPI_INTERFACE = libmpi_f90.a
+  >MPI_INTERFACE = libmpi_f90.a 
   >MPI_INCLUDE = .
   >FC_SERIAL= ifort
   >FFLAGS = -O2 -fPIC -qopenmp
@@ -54,28 +54,28 @@ Then, one proceeds the 'make' step. For NEC's own compiler problems, one must ad
 
 The vector lines must be changed as "novector" in the "old_atmfuncs.f" file:
 
-  !NEC$ novector
+  >!NEC$ novector
  
-  do 5 izeta=1,nzetasave(l,nsm,is)
+  >do 5 izeta=1,nzetasave(l,nsm,is)
   
-  norb=norb+(2*l+1)
+  >norb=norb+(2*l+1)
   
-  indx=indx+1
+  >indx=indx+1
   
-  if(norb.ge.io) goto 30
+  >if(norb.ge.io) goto 30
  
- 5 continue
+  >5 continue
 
 They are the lines at 426, 436, 492, 502, 523, 570, 580, 605, 666, 712, 724 and 756 of "old_atmfuncs.f" file.
 
 The file "normalize_dm.F90" undergoes an error, thus one just skips as '! call die(msg)' at the line 95. 
 We compile the rest of the code. Finally for execution, we must write:
 
-  #PBS -v NQSV_MPI_VER= 2020update0
+  >#PBS -v NQSV_MPI_VER= 2020update0
 
-  #PBS -v OMP_NUM_THREADS=4
+  >#PBS -v OMP_NUM_THREADS=4
 
-  module load intel-lx/$NQSV_MPI_VER
+  >module load intel-lx/$NQSV_MPI_VER
 
 
 ### Execution Scripts ###
