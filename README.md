@@ -41,8 +41,8 @@ The siesta-4.1b's MPICH+OMP script should be,
   >LIBS =  -L${MKLROOT}/lib/intel64 -lmkl_scalapack_lp64 -lmkl_intel_lp64 -lmkl_sequential -lmkl_core   -lmkl_blacs_intelmpi_lp64 -mkl -qopenmp -lpthread -lm -ldl
 
 Then, we proceed to the 'make' step. For NEC's own compiler problems, we must add additional terms. 
-For the six files including "iokp.f", "m_mixing.F90", "m_ts_contour_neq.f90", "m_ts_electype.F90",  "m_ts_weight.F90" and " ofc.f90", we change the correct statement as 'e12.6' by 'e13.6'. 
-Next point is that we must omit the $OMP lines of "inal_H_f_stress.F" as:
+For the six files including "iokp.f", "m_mixing.F90", "m_ts_contour_neq.f90", "m_ts_electype.F90",  "m_ts_weight.F90" and " ofc.f90", we change the correct statement 'e13.6' from 'e12.6'. 
+Next point is that we must comment out the $OMP lines of "inal_H_f_stress.F" as,
 
   >!!$OMP parallel default(shared)
   
@@ -94,11 +94,11 @@ They are the lines at 426, 436, 492, 502, 523, 570, 580, 605, 666, 712, 724 and 
 The file "normalize_dm.F90" undergoes an error, thus we just skips as '! call die(msg)' at the line 95. 
 We compile the rest of the code. 
 
-Finally for execution, we must write:
+Finally for execution, we may write:
+
+  >#PBS -T intmpi
 
   >#PBS -v NQSV_MPI_VER= 2020update0
-
-  >#PBS -v OMP_NUM_THREADS=4
 
   >module load intel-lx/$NQSV_MPI_VER
 
