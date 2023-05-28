@@ -16,7 +16,7 @@ After the installation step, one should test which choice of MPI or OMP is most 
 
 ### Special Vector-Parallel SIESTA Code ###
 
-For the Intel vector-parallel compiler supplied by NEC, however, it has the specified MPI and Scalapack packages, but one needs to rewrite more steps due to exact fortran coding. The arch.make script is shown as (3) of "arch.make-2", and the modified changes are summarized in "Annual Report of Tanaka and Zempo (2022)" (PDF) of this page. All the changes and figures are shown in English, so you may not miss the points. The files are already corrected in "arch.make" and siesta-4.1-b4-LX.tar.gz. It is unzipped, does the shell script, and the "make" step is executed in ~/siesta-4.1-b4-LX/Obj (Ref. 3). The run of CH4 molecules is tested with the vector-parallel computer of 48 cores in the directory ~/siesta-4.1-b4-LX/Examples/C96H384-MD35 (figures in Ref. 3).
+For the Intel's vector and parallel compiler supplied by NEC machines, it uses the MPI and Scalapack packages. But, it needs to rewrite the code on more steps due to exact NEC7s fortran coding. The arch.make script is shown as (3) of "arch.make-2", and the modified changes are summarized in "Annual Report of Tanaka and Zempo (2022)" (PDF) of this page. All the changes and figures are shown in English, so you may not miss the points. The files are already corrected in "arch.make" and siesta-4.1-b4-LX.tar.gz. It is unzipped, does the shell script, and the "make" step is executed in ~/siesta-4.1-b4-LX/Obj (Ref. 3). The run of CH4 molecules is tested with the vector-parallel computer of 48 cores in the directory ~/siesta-4.1-b4-LX/Examples/C96H384-MD35 (figures in Ref. 3).
 
 ### Points of Vector-Parallel Code ###
 
