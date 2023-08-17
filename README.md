@@ -1,6 +1,7 @@
 ## Ab-initio SIESTA-4.1b Molecular Dynamics on Parallel or/and Vector Machines ##
 
-As "Open Internet Access by Molecular Dynamics Simulations", a couple of various codes are shown in https://github.com/Mtanaka77/. This page is discussed on the vector-parallel SIESTA code. 
+As "Open Internet Access by Molecular Dynamics Simulations", a couple of various codes 
+are shown. This page is discussed on the parallel and vector-parallel SIESTA codes. 
 
 ### Generic Parallel SIESTA Code ###
 
