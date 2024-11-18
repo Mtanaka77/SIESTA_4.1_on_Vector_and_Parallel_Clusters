@@ -48,7 +48,7 @@ for the Obj directory of SIESTA. The siesta-4.1b's MPICH+OMP script should be,
   >LIBS =  -L${MKLROOT}/lib/intel64 -lmkl_scalapack_lp64 -lmkl_intel_lp64 -lmkl_sequential -lmkl_core   -lmkl_blacs_intelmpi_lp64 -mkl -qopenmp -lpthread -lm -ldl
 
 Then, we proceed to the 'make' step. For NEC's own compiler problems, we must add additional terms. 
-For the six files including "iokp.f", "m_mixing.F90", "m_ts_contour_neq.f90", "m_ts_electype.F90",  "m_ts_weight.F90" and " ofc.f90", we change the correct statement 'e13.6' from 'e12.6'. 
+For the six files including "iokp.f", "m_mixing.F90", "m_ts_contour_neq.f90", "m_ts_electype.F90",  "m_ts_weight.F90" and " ofc.f90", we change the correct statement 'e13.6' from 'e12.6' (it must be exact !). 
 Next point is that we must comment out the $OMP lines of "inal_H_f_stress.F" as,
 
   >!!$OMP parallel default(shared)
