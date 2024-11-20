@@ -2,7 +2,7 @@
 
 As "Open Internet Access by Molecular Dynamics Simulations", a couple of various codes 
 are shown. This page is concerned with the parallel and vector-parallel SIESTA codes,
-especially on the vector-parallel code. 
+especially on the vector-parallel code, which is named siesta-4.1b-LX.tar.gz. 
 
 ### Generic Parallel SIESTA Code ###
 
