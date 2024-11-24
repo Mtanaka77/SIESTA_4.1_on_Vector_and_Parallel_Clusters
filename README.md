@@ -23,8 +23,9 @@ For the Intel's vector and parallel compiler supplied by NEC machines, it uses t
 The files are already and strictly corrected to using siesta-4.1-b4-LX.tar.gz and "arch.make". 
 It is unzipped, does the shell script, and the "make" step is executed in ~/siesta-4.1-b4-LX/Obj (Ref. 3). 
 
-The run of CH4 molecules is executed with the vector-parallel computer of 48 + 48 cores (so named 2 jobs)
-in the directory ~/siesta-4.1-b4-LX/Examples/C96H384-MD35 (figures in Ref. 3).
+The run of CH4 molecules is executed with the vector-parallel computer of 48 cores (so named 1 job)
+in the directory ~/siesta-4.1-b4-LX/Examples/C96H384-MD35 (figures in Ref. 3). 
+The number of 96 carbons is just devided by 2 carbons per core.
 
 ### Points to Make the Vector-Parallel Siesta Code ###
 
