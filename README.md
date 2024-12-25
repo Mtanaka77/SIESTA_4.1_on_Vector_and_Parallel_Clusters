@@ -111,8 +111,8 @@ Finally for execution, we may write:
 
   >module load intel-lx/$NQSV_MPI_VER
 
-Note: The mpicc and mpifort of your vector-parallel supercomputer may be changed often, so 
-you should consult with the administer personnel about your Intel packages.
+Note: The mpicc and mpifort of your vector-parallel supercomputer may be often changed, so 
+you should consult with the administer personnel about your Intel software.
 
 
 ### Execution Scripts ###
