@@ -18,7 +18,7 @@ After the installation step, one should test which choice of MPI or OMP is most 
 
 ### Special Vector-Parallel SIESTA Code ###
 
-For the Intel's vector and parallel compiler supplied by NEC machines, it uses the MPI and Scalapack packages. But, it needs to rewrite the code on more steps due to exact NEC7s fortran coding. The arch.make script is shown as (3) of "arch.make-2", and the modified changes are summarized in "Annual Report of Tanaka and Zempo (2022)" (PDF) of this page. All the changes and figures are shown in English, so you may not miss the points. 
+For the Intel's vector and parallel compiler supplied by NEC machines, it uses the MPI and Scalapack packages. But, it needs to rewrite the code on more steps due to exact NEC's fortran coding. The arch.make script is shown as (3) of "arch.make-2", and the modified changes are summarized in "Annual Report of Tanaka and Zempo (2022)" (PDF) of this page. All the changes and figures are shown in English, so you may not miss the points. 
 
 The files are already and strictly corrected to using siesta-4.1-b4-LX.tar.gz and "arch.make". 
 It is unzipped, does the shell script, and the "make" step is executed in ~/siesta-4.1-b4-LX/Obj (Ref. 3). 
@@ -49,7 +49,7 @@ for the Obj directory of SIESTA. The siesta-4.1b's MPICH+OMP script should be,
   
   >LIBS =  -L${MKLROOT}/lib/intel64 -lmkl_scalapack_lp64 -lmkl_intel_lp64 -lmkl_sequential -lmkl_core   -lmkl_blacs_intelmpi_lp64 -mkl -qopenmp -lpthread -lm -ldl
 
-Then, we proceed to the 'make' step. For NEC's own compiler problems, we must add additional terms. 
+Then, we proceed to the 'make' step. For NEC's compiler, we must add additional terms. 
 For the six files including "iokp.f", "m_mixing.F90", "m_ts_contour_neq.f90", "m_ts_electype.F90",  "m_ts_weight.F90" and " ofc.f90", we change the correct statement 'e13.6' from 'e12.6' (it must be exact !). 
 Next point is that we must comment out the $OMP lines of "inal_H_f_stress.F" as,
 
@@ -111,8 +111,8 @@ Finally for execution, we may write:
 
   >module load intel-lx/$NQSV_MPI_VER
 
-Note: The mpicc and mpifort of your vector-parallel supercomputer may be often changed, so 
-you should consult with the administer personnel about the Intel software.
+Note: The mpicc and mpifort of your vector-parallel supercomputer may be changed often, so 
+you should consult with the administer personnel about the Intel's softwares.
 
 
 ### Execution Scripts ###
