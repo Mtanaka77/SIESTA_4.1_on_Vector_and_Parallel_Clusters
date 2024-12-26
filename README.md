@@ -13,7 +13,7 @@ We can compile the siesta-4.1-b4 directory by gfortran for the parallel version 
 The zipped files of mpi-4.0.2, scalapack-2.2.0, and OpenBLAS-0.3.21 (now in winter, 2022) are downloaded at the internet sites. If they are not yet installed in your system, unzip and "make", and "make install" separately for MPI, ScaLapack and OpenBLAS directories. 
 To compile the MPICH, one may use the configure script: "./configure --prefix=/opt/mpich-4.0.2" and go to the "make" step. In the ScaLapack, "SLmake.inc" in that directory may be changed to your PC environments. In the OpenBLAS, "Makefile.rule" may be configured manually before the make step. 
 
-After the installation step, one should test which choice of MPI or OMP is most efficient in the gfortran run. It is very important that generic gfortran compiler must be used throughout the configure and make steps. The PGI fortran does not compile the SIESTA code properly. 
+After the installation step, one should test which choice of MPI or OMP is most efficient in the gfortran run. It is very important that generic gfortran compiler must be used throughout the configure and make steps. The PGI fortran does not compile the SIESTA code properly. Remember that the usual cell size in simulations might be 300 Ry = 33 Ang in three dimensions.
 
 
 ### Special Vector-Parallel SIESTA Code ###
