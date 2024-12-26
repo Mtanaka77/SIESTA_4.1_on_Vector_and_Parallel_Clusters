@@ -26,6 +26,8 @@ It is unzipped, does the shell script, and the "make" step is executed in ~/sies
 The run of CH4 molecules is executed with the vector-parallel computer of 48 cores (so named 1 job)
 in the directory ~/siesta-4.1-b4-LX/Examples/C96H384-MD35 (figures in Ref. 3). 
 The number of 96 carbons is just devided by 2 carbons per core.
+Also, the 96 cores using 2 job in parallel or the 192 cores using 4 job in parallel is possible 
+by two or four nodes. 
 
 ### Points to Make the Vector-Parallel Siesta Code ###
 
