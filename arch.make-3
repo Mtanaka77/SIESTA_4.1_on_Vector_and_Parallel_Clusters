@@ -175,7 +175,7 @@ SIESTA_ARCH= x86_64-MPI-OMP
 CC= mpiicc -O2 -qopenmp
 FPP= $(FC) -E -P -x c
 
-# 32-bit integer, Scalapack, openmp
+# 32-bit integer, Scalapack, Openmp
 # https://www.hpc.nec/documents/sdk/SDK_NLC/UsersGuide/main/ja/f_linking.html
 FC= mpiifort
 
