@@ -201,8 +201,7 @@ FPPFLAGS = $(DEFS_PREFIX)-DFC_HAVE_ABORT
 FPPFLAGS += -DMPI
 
 # Link: MPI
-LIBS =  -L${MKLROOT}/lib/intel64 -lmkl_scalapack_lp64 -lmkl_intel_lp64 -lmkl_sequential -lmkl_core -lmkl_blacs_intelmpi_lp64 -mkl -qopenmp -lpthread -lm -ldl
-# -lmkl_sequential ?
+LIBS =  -L${MKLROOT}/lib/intel64 -lmkl_scalapack_lp64 -lmkl_intel_lp64 -lmkl_core -lmkl_blacs_intelmpi_lp64 -mkl -qopenmp -lpthread -lm -ldl
 
 # Dependency rules ---------
 FFLAGS_DEBUG = -g -O1  # your appropriate flags here...
