@@ -49,10 +49,10 @@ for the Obj directory of SIESTA. The siesta-4.1b's MPICH+OMP script should be,
   
   >FFLAGS = -O2 -fPIC -qopenmp
   
-  >LIBS =  -L${MKLROOT}/lib/intel64 -lmkl_scalapack_lp64 -lmkl_intel_lp64 -lmkl_sequential -lmkl_core   -lmkl_blacs_intelmpi_lp64 -mkl -qopenmp -lpthread -lm -ldl
+  >LIBS =  -L${MKLROOT}/lib/intel64 -lmkl_scalapack_lp64 -lmkl_intel_lp64 -lmkl_core -lmkl_blacs_intelmpi_lp64 -mkl -qopenmp -lpthread -lm -ldl
 
-Then, we proceed to the 'make' step. For NEC's compiler, we must add additional terms. 
-For the six files including "iokp.f", "m_mixing.F90", "m_ts_contour_neq.f90", "m_ts_electype.F90",  "m_ts_weight.F90" and " ofc.f90", we change the correct statement 'e13.6' from 'e12.6' (it must be exact !). 
+ Then, we proceed to the 'make' step, where for NEC's compiler we must add additional terms. 
+For the six files including "iokp.f", "m_mixing.F90", "m_ts_contour_neq.f90", "m_ts_electype.F90",  "m_ts_weight.F90" and " ofc.f90", we change the "correct" statement of 'e13.6' from 'e12.6' (it must be written exactly !). 
 Next point is that we must comment out the $OMP lines of "inal_H_f_stress.F" as,
 
   >!!$OMP parallel default(shared)
@@ -101,7 +101,7 @@ The vector lines must be changed as "novector" in the "old_atmfuncs.f" file:
  
   >5 continue
 
-They are the lines at 426, 436, 492, 502, 523, 570, 580, 605, 666, 712, 724 and 756 of "old_atmfuncs.f" file.
+They correspond to the lines at 426, 436, 492, 502, 523, 570, 580, 605, 666, 712, 724 and 756 of "old_atmfuncs.f" file.
 The file "normalize_dm.F90" undergoes an error, thus we just skips as '! call die(msg)' at the line 95. 
 We compile the rest of the code. 
 
@@ -113,8 +113,9 @@ Finally for execution, we may write:
 
   >module load intel-lx/$NQSV_MPI_VER
 
-Note: The mpicc and mpifort of your vector-parallel supercomputer may be changed often, so 
-you should consult with the administer personnel about the RedHat/Intel's compiler.
+Note: The mpicc and mpifort of your vector-parallel supercomputer may be changed often.
+If you feel something wrong, you should consult with the administer personnel about the 
+RedHat/Intel's compiler.
 
 
 ### Execution Scripts ###
