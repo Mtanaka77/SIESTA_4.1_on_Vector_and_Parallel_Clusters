@@ -18,7 +18,7 @@ After the installation step, one should test which choice of MPI or OMP is most 
 
 ### Special Vector-Parallel SIESTA Code ###
 
-For the Intel's vector and parallel compiler supplied by NEC machines, it uses the MPI and Scalapack packages. But, it needs to rewrite the code on more steps due to exact NEC's fortran coding. The arch.make script is shown as (3) of "arch.make-2", and the modified changes are summarized in "Annual Report of Tanaka and Zempo (2022)" (PDF) of this page. All the changes and figures are shown in English, so you may not miss the points. 
+For the Intel's vector and parallel compiler supplied by NEC machines, it uses the MPI and Scalapack packages. But, it needs to rewrite the code on more steps due to NEC's exact fortran coding. The arch.make script is shown as (3) of "arch.make-2", and the modified changes are summarized in "Annual Report of Tanaka and Zempo (2022)" (PDF) of this page. All the changes and figures are shown in English, so you may not miss the points. 
 
 The files are already and strictly corrected to using siesta-4.1-b4-LX.tar.gz and "arch.make". 
 It is unzipped, does the shell script, and the "make" step is executed in ~/siesta-4.1-b4-LX/Obj (Ref. 3). 
@@ -114,10 +114,9 @@ Finally for execution, we may write:
   >module load intel-lx/$NQSV_MPI_VER
 
 Note: The mpicc and mpifort of your vector-parallel supercomputer may be changed often.
-If you feel something wrong, you should consult the administer personnel about the RedHat Linux/Intel's compiler. 
-(The RedHat Linux/NEC compiler after last fall seems to be buggy at a large number of atoms, which may be fixed. 
-Contrarily, the parallel Siesta-4.1b code hasn't a problem.)
-
+If you feel something wrong, you should consult the administer personnel about the Intel compiler. 
+The RedHat Linux/NEC compiler used after the fall 2024 seems to be buggy of memory leak of a 
+large number of atoms, which may be fixed. Contrarily, the parallel Siesta-4.1b code hasn't a problem.
 
 ### Execution Scripts ###
  
