@@ -115,7 +115,7 @@ Finally for execution, we may write:
 
 Note: The mpicc and mpifort of your vector-parallel supercomputer may be changed often.
 If you feel something wrong, you should consult the administer personnel about the Intel compiler. 
-The RedHat Linux/NEC compiler used after the fall 2024 seems to be buggy of memory leak of a 
+The RedHat Linux/NEC compiler changed after the fall 2024 seems buggy of memory leak of a 
 large number of atoms, which may be fixed. Contrarily, the parallel Siesta-4.1b code hasn't a problem.
 
 ### Execution Scripts ###
