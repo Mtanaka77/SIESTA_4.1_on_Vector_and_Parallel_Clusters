@@ -115,8 +115,8 @@ Finally for execution, we may write:
 
 Note: The mpicc and mpifort of your vector-parallel supercomputer may be changed often.
 If you feel something wrong, you should consult the administer personnel about the RedHat Linux/Intel's compiler. 
-(The RedHat Linux/NEC compiler seems to have bugs at a large number of atoms, which may be fixed. 
-The parallel Siesta code hasn't a problem.)
+(The RedHat Linux/NEC compiler after last fall seems to be buggy at a large number of atoms, which may be fixed. 
+Contrarily, the parallel Siesta-4.1b code hasn't a problem.)
 
 
 ### Execution Scripts ###
