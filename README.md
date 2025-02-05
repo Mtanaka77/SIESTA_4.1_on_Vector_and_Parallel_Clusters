@@ -114,8 +114,9 @@ Finally for execution, we may write:
   >module load intel-lx/$NQSV_MPI_VER
 
 Note: The mpicc and mpifort of your vector-parallel supercomputer may be changed often.
-If you feel something wrong, you should consult with the administer personnel about the 
-RedHat/Intel's compiler.
+If you feel something wrong, you should consult the administer personnel about the RedHat Linux/Intel's compiler. 
+(The RedHat Linux/NEC compiler seems to have bugs at a large number of atoms, which may be fixed. 
+The parallel Siesta code hasn't a problem.)
 
 
 ### Execution Scripts ###
