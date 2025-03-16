@@ -114,9 +114,9 @@ Finally for execution, we may write:
   >module load intel-lx/$NQSV_MPI_VER
 
 Note: The mpicc and mpifort of the vector-parallel supercomputer may be changed often.
-If you feel something strange, you should consult the administrator personnel of the Intel compiler. 
+If you feel strange, you should consult the administrator personnel of the Intel compiler. 
 The RedHat Linux/NEC compiler which is installed in summer 2024 seems buggy of memory leak for a 
-large number of atoms of >2000 aoms and the four parallel nodes (mpiexec -n 48..., #PBS -b 4), 
+large number of >2000 atoms and the four parallel nodes (mpiexec -n 48..., #PBS -b 4), 
 which may be fixed. Contrarily, the parallel Siesta-4.1b code hasn't a problem.
 
 ### Execution Scripts ###
