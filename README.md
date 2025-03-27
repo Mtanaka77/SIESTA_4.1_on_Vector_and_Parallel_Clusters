@@ -151,7 +151,7 @@ where the file 'arch.make' is:
 
 >LIBS =  -L${MKLROOT}/lib/intel64 -lmkl_scalapack_lp64 -lmkl_intel_lp64 -lmkl_core -lmkl_blacs_intelmpi_lp64 -mkl -qopenmp -lpthread -lm -ldl
 
-with the spring 2025 version, and execute:
+with the spring 2025 version. The execution step will be:
 
 >mpirun -machinefile ${PBS_NODEFILE} -n 96 -perhost 1 ~/siesta-4.1-b4-LX/Obj/siesta <./c384h1536.fdf >c384h1536.out
 
