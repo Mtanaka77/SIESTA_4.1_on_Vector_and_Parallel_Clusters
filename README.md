@@ -135,11 +135,11 @@ Not compatible with the PGI fortran.
 
 >ScaLapack-2.2.0: in SLmake.inc, CDEFS= -DAdd_  FC= mpifort  CC= mpicc ...
 
->#!/bin/bash; mpiexec -n 6 ~/siesta-4.1-b4gcc/Obj/siesta c12h48.fdf > c12h48.out &; exit 0
+>#!/bin/bash; mpiexec -n 6 ~/siesta-4.1-b4gcc/Obj/siesta c12h48.fdf >c12h48.out &; exit 0
 
-On NEC's supercomputer, you will execute, 
+On NEC's supercomputer with 2 jobs (96 nodes in parallel, 1 OpenMP threads), you will execute, 
 
->mpirun -machinefile ${PBS_NODEFILE} -n 96 -perhost 1 ~/siesta-4.1-b4-LX/Obj/siesta < ./c192h768.fdf > c192h768.out
+>mpirun -machinefile ${PBS_NODEFILE} -n 96 -perhost 1 ~/siesta-4.1-b4-LX/Obj/siesta <./c384h1536.fdf >c384h1536.out
 
 ### References: ###
 
