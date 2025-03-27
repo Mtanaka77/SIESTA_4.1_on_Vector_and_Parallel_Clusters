@@ -111,7 +111,7 @@ Finally for execution, we may write:
 
   >#PBS -T intmpi
 
-  >#PBS -v NQSV_MPI_VER= 2020update0
+  >#PBS -v NQSV_MPI_VER= 2024.2
 
   >module load intel-lx/$NQSV_MPI_VER
 
@@ -136,7 +136,8 @@ Not compatible with the PGI fortran.
 
 >#!/bin/bash; mpiexec -n 6 ~/siesta-4.1-b4gcc/Obj/siesta <c12h48.fdf >c12h48.out &; exit 0
 
-On NEC's supercomputer with 2 jobs (i.e. 96 nodes in parallel, 1 OpenMP threads), you will compile: 
+On NEC's supercomputer with 2 jobs (i.e. 96 nodes in parallel, 1 OpenMP threads), you will 'make'
+where 'arch.make' is: 
 
 >CC= mpiicx -O2 -qopenmp
 
