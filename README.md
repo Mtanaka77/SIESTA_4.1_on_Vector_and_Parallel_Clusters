@@ -136,8 +136,7 @@ Not compatible with the PGI fortran.
 
 >#!/bin/bash; mpiexec -n 6 ~/siesta-4.1-b4gcc/Obj/siesta <c12h48.fdf >c12h48.out &; exit 0
 
-On NEC's supercomputer with 2 jobs (i.e. 96 nodes in parallel, 1 OpenMP threads), you will do 'make'
-where the file 'arch.make' is: 
+On NEC's supercomputer, you will do 'make' where the file 'arch.make' is: 
 
 >CC= mpiicx -O2 -qopenmp
 
@@ -151,7 +150,8 @@ where the file 'arch.make' is:
 
 >LIBS =  -L${MKLROOT}/lib/intel64 -lmkl_scalapack_lp64 -lmkl_intel_lp64 -lmkl_core -lmkl_blacs_intelmpi_lp64 -mkl -qopenmp -lpthread -lm -ldl
 
-with the spring 2025 version (Ref. 4). The execution step will be:
+with the spring 2025 version (Ref. 4). The execution with 2 jobs (i.e. 96 nodes in parallel, 
+1 OpenMP threads, 96 processes) will be:
 
 >mpirun -machinefile ${PBS_NODEFILE} -n 96 -perhost 1 ~/siesta-4.1-b4-LX/Obj/siesta <./c384h1536.fdf >c384h1536.out
 
