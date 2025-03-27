@@ -151,7 +151,7 @@ where the file 'arch.make' is:
 
 >LIBS =  -L${MKLROOT}/lib/intel64 -lmkl_scalapack_lp64 -lmkl_intel_lp64 -lmkl_core -lmkl_blacs_intelmpi_lp64 -mkl -qopenmp -lpthread -lm -ldl
 
-with the spring 2025 version. The execution step will be:
+with the spring 2025 version (Ref. 4). The execution step will be:
 
 >mpirun -machinefile ${PBS_NODEFILE} -n 96 -perhost 1 ~/siesta-4.1-b4-LX/Obj/siesta <./c384h1536.fdf >c384h1536.out
 
@@ -163,3 +163,4 @@ It takes 67 steps in 10 hours by the LX server '2 jobs' of NIFS/NEC supercompute
 1. J. M. Soler et al., J. Phys. Cond. Matt. 14, 2745 (2002).
 2. A. García et al., Chem. Phys. 152, 204108 (2020).
 3. M. Tanaka and Y. Zempo, Annual Report of National Institute for Fusion Science, R03/275 (2021) *).
+4. M. Tanaka, Execution of Siesta-4.1b4 by Spring 2025 NIFS Supercomputer, Japan.
