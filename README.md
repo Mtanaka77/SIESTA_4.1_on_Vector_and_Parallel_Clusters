@@ -136,8 +136,8 @@ Not compatible with the PGI fortran.
 
 >#!/bin/bash; mpiexec -n 6 ~/siesta-4.1-b4gcc/Obj/siesta <c12h48.fdf >c12h48.out &; exit 0
 
-On NEC's supercomputer with 2 jobs (i.e. 96 nodes in parallel, 1 OpenMP threads), you will 'make'
-where 'arch.make' is: 
+On NEC's supercomputer with 2 jobs (i.e. 96 nodes in parallel, 1 OpenMP threads), you will do 'make'
+where the file 'arch.make' is: 
 
 >CC= mpiicx -O2 -qopenmp
 
