@@ -155,7 +155,7 @@ with the spring 2025 version, and execute:
 
 >mpirun -machinefile ${PBS_NODEFILE} -n 96 -perhost 1 ~/siesta-4.1-b4-LX/Obj/siesta <./c384h1536.fdf >c384h1536.out
 
-It takes 67 steps in 10 hours by the '2 jobs' LX server of NIFS/NEC supercomputers.
+It takes 67 steps in 10 hours by the LX server '2 jobs' of NIFS/NEC supercomputers.
 
 
 ### References: ###
