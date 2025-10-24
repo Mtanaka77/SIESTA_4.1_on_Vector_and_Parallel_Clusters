@@ -1,5 +1,4 @@
 (1) MPI, gfortran (generic)
-
 # 
 # Copyright (C) 1996-2016	The SIESTA group
 #  This file is distributed under the terms of the
@@ -27,7 +26,8 @@ FC = mpifort
 MPI_INTERFACE = libmpi_f90.a
 MPI_INCLUDE = . 
 
-FFLAGS = -O2 -fPIC -ftree-vectorize -march=native
+# The argument-mismatch flag
+FFLAGS = -O2 -fPIC -ftree-vectorize -march=native -fallow-argument-mismatch
 FC_SERIAL = gfortran
 
 AR = ar
@@ -76,7 +76,6 @@ atom.o: atom.F
 
 
 (2) MPI + OMP, gfortran (generic)
-
 # 
 # Copyright (C) 1996-2016	The SIESTA group
 #  This file is distributed under the terms of the
@@ -103,7 +102,9 @@ FC = mpifort #gfortran
 MPI_INTERFACE = libmpi_f90.a
 MPI_INCLUDE = . 
 
-FFLAGS = -O2 -fexpensive-optimizations -ftree-vectorize -fprefetch-loop-arrays -march=native -fPIC -fopenmp
+# The argument-mismatch flag
+FFLAGS = -O2 -fexpensive-optimizations -ftree-vectorize -fprefetch-loop-arrays -march=native -fPIC -fopenmp -fallow-argument-mismatch
+
 FC_SERIAL = gfortran
 
 AR = ar
@@ -150,7 +151,6 @@ atom.o: atom.F
 
 
 (3) MPI-vector-by_NEC
-
 # 
 # Copyright (C) 1996-2016	The SIESTA group
 #  This file is distributed under the terms of the
@@ -183,7 +183,7 @@ MPI_INTERFACE = libmpi_f90.a
 MPI_INCLUDE = .
 FC_SERIAL= ifort
 
-FFLAGS = -O2 -fPIC -qopenmp
+FFLAGS = -O2 -fPIC -qopenmp 
 
 AR = ar
 RANLIB = ranlib
