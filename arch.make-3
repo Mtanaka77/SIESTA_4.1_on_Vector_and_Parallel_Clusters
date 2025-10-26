@@ -1,12 +1,13 @@
 #
 # ++ CHANGES ++
-# M.Tanaka, 2nd GCME Conference, California, USA (2012).
 #
 # 1) The allow-argument-mismatch flag for recent Fortran
 #    if it is necessary.
 # 2) The electric field, Ex = (original) +E0 sin(k*x-omg*t)
-#    at m_efield.F
-# 3) The MaxWallTime flag at siesta.F
+#    at Src/m_efield.F
+# 3) The MaxWallTime flag at Src/siesta.F
+#
+#   M.Tanaka, 2nd GCME Conference, California, USA (2012).
 #
  
 #(1) MPI, gfortran (generic)
