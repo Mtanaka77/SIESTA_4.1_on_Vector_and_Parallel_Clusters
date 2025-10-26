@@ -7,7 +7,7 @@
 #    at Src/m_efield.F
 # 3) The MaxWallTime flag at Src/siesta.F
 #
-#   M.Tanaka, 2nd GCME Conference, California, USA (2012).
+#  cf. M.Tanaka, 2nd GCME Conference, California, USA (2012).
 #
  
 #(1) MPI, gfortran (generic)
