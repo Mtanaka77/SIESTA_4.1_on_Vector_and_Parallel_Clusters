@@ -6,6 +6,15 @@
 #  or http://www.gnu.org/copyleft/gpl.txt.
 # See Docs/Contributors.txt for a list of contributors.
 #
+# ++ CHANGES ++
+# M.Tanaka, 2nd GCME Conference, California, USA (2012).
+#
+# 1) The allow-argument-mismatch flag for recent Fortran
+#    if it is necessary.
+# 2) The electric field, Ex = (original) +E0 sin(k*x-omg*t)
+#    at m_efield.F
+# 3) The MaxWallTime flag at siesta.F
+#
 #-------------------------------------------------------------------
 # arch.make file for gfortran compiler.
 # To use this arch.make file you should rename it to
