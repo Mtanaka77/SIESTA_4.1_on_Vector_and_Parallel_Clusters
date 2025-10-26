@@ -7,6 +7,9 @@ especially on the vector-parallel code which is listed as siesta-4.1b-LX.tar.gz 
 This SIESTA code of siesta-4.1-b4gccAM.tar.gz here is supplied with 
 the electric field of the form E0 * sin(kx-omega*t), at Src/m_efield.F (Ref.5).
 The microwaves by THz are simulated with the SIEATE-4.1 code. 
+Water below the zero degree Celsius is frozen and stands still for 1 GHz,
+while the water in 1 THz reacts and the temperature grows at microwaves.
+
 
 ### Generic Parallel SIESTA Code ###
 
