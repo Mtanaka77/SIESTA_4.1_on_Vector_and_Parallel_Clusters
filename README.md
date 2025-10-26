@@ -6,6 +6,7 @@ especially on the vector-parallel code which is listed as siesta-4.1b-LX.tar.gz 
 
 This SIESTA code of siesta-4.1-b4gccAM.tar.gz here is supplied with 
 the electric field of the form E0 * sin(kx-omega*t), at Src/m_efield.F (Ref.5).
+The microwaves by THz are simulated with the SIEATE-4.1 code. 
 
 ### Generic Parallel SIESTA Code ###
 
