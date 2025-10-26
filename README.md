@@ -8,8 +8,8 @@ This SIESTA code of siesta-4.1-b4gccAM.tar.gz here is supplied with
 the electric field of the form E0 * sin(kx-omega*t), at Src/m_efield.F.
 The microwaves by THz ranges are simulated with the SIEATE-4.1 code. 
 The water below the zero degree Celsius is frozen and stands still for 10 GHz (Ref. 5),
-while the water in 5 THz reacts to the electric field and the temperature rises 
-at far-infrared radiation (Ref. 6).
+while the water in 5 THz below the zero Celsius reacts to the electric field 
+and the temperature rises at far-infrared radiation (Ref. 6).
 
 
 ### Generic Parallel SIESTA Code ###
