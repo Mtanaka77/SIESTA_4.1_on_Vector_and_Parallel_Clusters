@@ -5,10 +5,11 @@ are shown in this directory. This page is concerned with the parallel and vector
 especially on the vector-parallel code which is listed as siesta-4.1b-LX.tar.gz in the reference. 
 
 This SIESTA code of siesta-4.1-b4gccAM.tar.gz here is supplied with 
-the electric field of the form E0 * sin(kx-omega*t), at Src/m_efield.F (Ref.5).
-The microwaves by THz are simulated with the SIEATE-4.1 code. 
-Water below the zero degree Celsius is frozen and stands still for 1 GHz,
-while the water in 1 THz reacts and the temperature grows at microwaves.
+the electric field of the form E0 * sin(kx-omega*t), at Src/m_efield.F.
+The microwaves by THz ranges are simulated with the SIEATE-4.1 code. 
+The water below the zero degree Celsius is frozen and stands still for 10 GHz (Ref. 5),
+while the water in 5 THz reacts to the electric field and the temperature rises 
+at far-infrared radiation (Ref. 6).
 
 
 ### Generic Parallel SIESTA Code ###
@@ -171,4 +172,5 @@ It takes 67 steps in 10 hours by the LX server '2 jobs' of NIFS/NEC supercompute
 2. A. García et al., Chem. Phys. 152, 204108 (2020).
 3. M. Tanaka and Y. Zempo, Annual Report of National Institute for Fusion Science, R03/275 (2021) *).
 4. M. Tanaka, Execution of Siesta-4.1b4 by Spring 2025 NIFS Supercomputer, Japan.
-5. M. Tanaka, et. al., 2nd GCME Conference, California, USA (2012).
+5. M. Tanaka and M. Sato, J. Chem. Phys., 126, 034509 1-9 (2007).
+6. M. Tanaka, et. al., 2nd GCME Conference, California, USA (2012).
