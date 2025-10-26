@@ -164,3 +164,4 @@ It takes 67 steps in 10 hours by the LX server '2 jobs' of NIFS/NEC supercompute
 2. A. García et al., Chem. Phys. 152, 204108 (2020).
 3. M. Tanaka and Y. Zempo, Annual Report of National Institute for Fusion Science, R03/275 (2021) *).
 4. M. Tanaka, Execution of Siesta-4.1b4 by Spring 2025 NIFS Supercomputer, Japan.
+5. M. Tanaka, et. al., 2nd GCME Conference, California, USA (2012).
