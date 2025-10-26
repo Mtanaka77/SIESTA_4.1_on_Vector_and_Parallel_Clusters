@@ -27,7 +27,10 @@ MPI_INTERFACE = libmpi_f90.a
 MPI_INCLUDE = . 
 
 # The argument-mismatch flag
-FFLAGS = -O2 -fPIC -ftree-vectorize -march=native -fallow-argument-mismatch
+FFLAGS = -O2 -fPIC -ftree-vectorize -march=native \
+         -fallow-argument-mismatch
+#FFLAGS = -O2 -fPIC -ftree-vectorize -march=native
+#
 FC_SERIAL = gfortran
 
 AR = ar
@@ -103,7 +106,11 @@ MPI_INTERFACE = libmpi_f90.a
 MPI_INCLUDE = . 
 
 # The argument-mismatch flag
-FFLAGS = -O2 -fexpensive-optimizations -ftree-vectorize -fprefetch-loop-arrays -march=native -fPIC -fopenmp -fallow-argument-mismatch
+FFLAGS = -O2 -fexpensive-optimizations -ftree-vectorize \
+    -fprefetch-loop-arrays -march=native -fPIC -fopenmp \
+    -fallow-argument-mismatch
+#FFLAGS = -O2 -fexpensive-optimizations -ftree-vectorize \
+#    -fprefetch-loop-arrays -march=native -fPIC -fopenmp
 
 FC_SERIAL = gfortran
 
