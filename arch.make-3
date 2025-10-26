@@ -1,10 +1,3 @@
-(1) MPI, gfortran (generic)
-# 
-# Copyright (C) 1996-2016	The SIESTA group
-#  This file is distributed under the terms of the
-#  GNU General Public License: see COPYING in the top directory
-#  or http://www.gnu.org/copyleft/gpl.txt.
-# See Docs/Contributors.txt for a list of contributors.
 #
 # ++ CHANGES ++
 # M.Tanaka, 2nd GCME Conference, California, USA (2012).
@@ -14,6 +7,15 @@
 # 2) The electric field, Ex = (original) +E0 sin(k*x-omg*t)
 #    at m_efield.F
 # 3) The MaxWallTime flag at siesta.F
+#
+ 
+#(1) MPI, gfortran (generic)
+# 
+# Copyright (C) 1996-2016	The SIESTA group
+#  This file is distributed under the terms of the
+#  GNU General Public License: see COPYING in the top directory
+#  or http://www.gnu.org/copyleft/gpl.txt.
+# See Docs/Contributors.txt for a list of contributors.
 #
 #-------------------------------------------------------------------
 # arch.make file for gfortran compiler.
@@ -35,7 +37,7 @@ FC = mpifort
 MPI_INTERFACE = libmpi_f90.a
 MPI_INCLUDE = . 
 
-# The argument-mismatch flag
+# The allow-argument-mismatch flag if necessary
 FFLAGS = -O2 -fPIC -ftree-vectorize -march=native \
          -fallow-argument-mismatch
 #FFLAGS = -O2 -fPIC -ftree-vectorize -march=native
