@@ -4,7 +4,7 @@ As "Open Internet Access by Molecular Dynamics Simulations", a couple of various
 are shown in this directory. This page is concerned with the parallel and vector-parallel SIESTA codes,
 especially on the vector-parallel code which is listed as siesta-4.1b-LX.tar.gz in the reference. 
 
-This SIESTA code of siesta-4.1-b4gccAM.tar.gz here is supplied with 
+This SIESTA code of siesta-4.1-b4gccAM.tar.gz by MPI-gfortran is supplied with 
 the electric field of the form E0 * sin(kx-omega*t), at Src/m_efield.F.
 The microwaves by THz ranges are simulated with the SIEATE-4.1 code. 
 The water below the zero degree Celsius is frozen and stands still for 10 GHz (Ref. 5),
