@@ -4,8 +4,8 @@ As "Open Internet Access by Molecular Dynamics Simulations", a couple of various
 are shown in this directory. This page is concerned with the parallel and vector-parallel SIESTA codes,
 especially on the vector-parallel code which is listed as siesta-4.1b-LX.tar.gz in the reference. 
 
-This SIESTA code of siesta-4.1-b4gccAM.tar.gz by MPI-gfortran is supplied with 
-the electric field of the form E0 * sin(kx-omega*t), at Src/m_efield.F.
+This SIESTA code of siesta-4.1-b4gccAM1.tar.gz by MPI-gfortran is supplied with 
+the electric field of the form E0 * sin(omega*t), at Src/m_efield.F.
 The microwaves by THz ranges are simulated with the SIEATE-4.1 code. 
 The water below the zero degree Celsius is frozen and stands still for 10 GHz (Ref. 5),
 while the water in 5 THz below the zero Celsius reacts to the electric field 
@@ -136,13 +136,13 @@ Contrarily, the parallel code of Siesta-4.1b hasn't a problem.
 MPI and ScaLapack by gfortran; configure, make, and make install (packages are in winter 2022). 
 Not compatible with the PGI fortran.
 
->mpich-4.0.2: ./configure --prefix=/opt/mpich-4.0.2 2>&1 | tee conf.txt
+>openmpi-4.1.4: ./configure --prefix=/opt/openmpi-4.1.4 2>&1 | tee conf.txt
 
 >OpenBLAS-0.3.21: in Makefile.rule, VERSION= 0.3.21  LIBNAMESUFFIX= omp ...
 
->ScaLapack-2.2.0: in SLmake.inc, CDEFS= -DAdd_  FC= mpifort  CC= mpicc ...
+>scalapack-2.2.2: in SLmake.inc, CDEFS= -DAdd_  FC= mpifort  CC= mpicc ...
 
->#!/bin/bash; mpiexec -n 6 ~/siesta-4.1-b4gcc/Obj/siesta <c12h48.fdf >c12h48.out &; exit 0
+>#!/bin/bash; mpiexec -n 6 ~/siesta-4.1-b4gccAM1/Obj1/siesta <iceA841.fdf >iceA841.out &; exit 0
 
 On NEC's supercomputer, you will do 'make' where the file 'arch.make' is: 
 
