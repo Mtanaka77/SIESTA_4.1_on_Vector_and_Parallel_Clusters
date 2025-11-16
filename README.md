@@ -142,7 +142,7 @@ Not compatible with the PGI fortran.
 
 >scalapack-2.2.2: in SLmake.inc, CDEFS= -DAdd_  FC= mpifort  CC= mpicc ...
 
->#!/bin/bash; mpiexec -n 6 ~/siesta-4.1-b4gccAM1/Obj1/siesta <iceA841.fdf >iceA841.out &; exit 0
+>#!/bin/bash; mpiexec -n 4 ~/siesta-4.1-b4gccAM1/Obj1/siesta <iceA841.fdf >iceA841.out &; exit 0
 
 On NEC's supercomputer, you will do 'make' where the file 'arch.make' is: 
 
