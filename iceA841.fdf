@@ -1,0 +1,113 @@
+SystemName        ice non-periodic Verlet w/MW w/o spin
+SystemLabel       iceA841
+MaxWalltime       20000 s # Unit: in sec
+#
+NumberOfAtoms      384
+NumberOfSpecies      2    #  O & H
+%block ChemicalSpeciesLabel
+ 1  8  O
+ 2  1  H
+%endblock ChemicalSpeciesLabel
+#
+LatticeConstant 1.000 Ang
+%block LatticeVectors
+  35.000    0.000     0.000
+   0.000   12.7177    0.000
+   0.000    0.000    12.7177
+%endblock LatticeVectors
+
+#
+%block SuperCell
+ 1   0   0
+ 0   1   0
+ 0   0   1
+%endblock SuperCell
+#
+#PAO.BasisSize       SZ
+#PAO.EnergyShift     300 meV
+MeshCutoff           150.0 Ry  #  300.0 Ry <- if spin
+BlockSize            32      # for parallelization
+TryMemoryIncrease    .true.  # diagonalization
+DiagScale            1.1
+DiagMemory           10      # Needs more for many parallel nodes
+#ProcessorY            8      # if 128 cpus, 1 x 8 x 16 (ProcX is not divided)
+ ProcessorY           4      # if 16 cpus, 2 x 4 x 4 (ProcX is not divided)
+#ProcessorY           2      # if 16 cpus, 1 x 4 x 4 (ProcX is not divided)
+#
+MaxSCFIterations     300
+DM.MixingWeight      0.01    # 0.002 <- if spin
+DM.NumberPulay       3
+DM.Tolerance         1.d-5   # 1.d-4 is N/G
+#
+DM.UseSaveDM         .true.  # On for CG/MD restart
+MD.UseSaveXV         .true.  # ... also for MD ...
+#
+WriteMDXmol          .true.          # write to ANI file
+SaveElectrostaticPotential  .false.  # create VH file
+LongOutput          .true.
+#
+SaveRho             .false.
+SaveDeltaRho        .false.
+WriteRhoStep         20
+WriteCoorXmol       .true.
+#
+SpinPolarized       .false.  # .true.
+FixSpin             .false.  # .true.
+TotalSpin            0.0
+#
+XC.functional        GGA     #  LDA     |  GGA
+XC.authors           PBE     #  CA PW92 |  PBE
+SolutionMethod       diagon  # diagon, or orderN for N>100
+ElectronicTemperature  25 meV
+#
+ON.functional              Kim
+ON.MaxNumIter              200
+ON.etol                    2.d-4
+ON.ChemicalPotential      .false. # .true. # useful at the beginning of the run
+ON.ChemicalPotentialUse   .false. # .true. # useful at the beginning of the run
+ON.RcLWF                   20. Bohr # 9.5 Bohr
+ON.ChemicalPotentialRc     9.5 Bohr
+ON.ChemicalPotentialTemperature  0.05 Ry
+ON.ChemicalPotentialOrder  100
+#
+#
+MD.TypeOfRun          Verlet      # first CG -> then, verlet nose anneal
+#
+MD.NumCGsteps         300         # only for cg
+MD.MaxCGDispl         0.1  Ang    # only for cg
+MD.MaxForceTol        0.04 eV/Ang # only for cg, 0.04eV (for semi-con) 
+#
+MD.InitialTimeStep           1
+MD.FinalTimeStep         10000    # 5000
+MD.LengthTimeStep       1.0 fs    # Laser 0.33 fs
+MD.InitialTemperature    0.0 K
+MD.TargetTemperature     0.0 K   # <- must be Nose for temperature control
+#
+#  Added WaveFrequency and WaveField, uses m_efield.F
+MD.WaveFrequency     5.0 THz     # d=0.51e-10 em, E=5.0e7 V/m -> Ed/kT=0.098
+MD.WaveField         1.0d9 V/m   # 1.0d9 V/m  # 5.0d7 V/m  # kT= 2.6e-2 eV
+#                                 -> C60 destroyed at 8.74d10 V/m
+#
+%block GeometryConstraints
+ m_position from 100 to 102
+ m_position from 106 to 108
+ m_position from 112 to 114
+ m_position from 118 to 120
+ m_position from 124 to 126
+ m_position from 130 to 132
+ m_position from 136 to 138
+ m_position from 142 to 144
+ m_position from 241 to 243
+ m_position from 247 to 249
+ m_position from 253 to 255
+ m_position from 259 to 261
+ m_position from 265 to 267
+ m_position from 271 to 273
+ m_position from 277 to 279
+ m_position from 283 to 285
+%endblock GeometryConstraints
+#
+AtomicCoordinatesFormat Ang # Fractional
+AtomCoorFormatOut       Ang
+%block AtomicCoordinatesAndAtomicSpecies   < iceA841.coor
+
