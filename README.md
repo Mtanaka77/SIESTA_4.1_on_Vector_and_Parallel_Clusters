@@ -133,12 +133,12 @@ Contrarily, the parallel code of Siesta-4.1b hasn't a problem.
 
 ### Execution Scripts ###
  
-MPI and ScaLapack by gfortran; configure, make, and make install (packages are in winter 2022). 
-Not compatible with the PGI fortran.
+MPI and ScaLapack by gfortran; configure, make, and make install 
+(Not compatible with the PGI fortran).
 
->openmpi-4.1.4: ./configure --prefix=/opt/openmpi-4.1.4 2>&1 | tee conf.txt
+>openmpi-5.0.8: ./configure --prefix=/opt/openmpi-5.0.8 2>&1 | tee conf.txt
 
->OpenBLAS-0.3.21: in Makefile.rule, VERSION= 0.3.21  LIBNAMESUFFIX= omp ...
+>OpenBLAS-0.3.30: in Makefile.rule, VERSION= 0.3.30  LIBNAMESUFFIX= omp ...
 
 >scalapack-2.2.2: in SLmake.inc, CDEFS= -DAdd_  FC= mpifort  CC= mpicc ...
 
