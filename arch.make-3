@@ -3,14 +3,14 @@
 #
 # 1) The allow-argument-mismatch flag for recent Fortran
 #    if it is necessary.
-# 2) The electric field, Ex = (original) +E0 sin(k*x-omg*t)
+# 2) The electric field, Ex = (original) +E0 sin(omg*t)
 #    at Src/m_efield.F
 # 3) The MaxWallTime flag at Src/siesta.F
 #
 #  cf. M.Tanaka et.al., 2nd GCME Conference, California, USA (2012).
 #
  
-#(1) MPI, gfortran (generic)
+#(1) MPI, gfortran (generic) - it is slow !
 # 
 # Copyright (C) 1996-2016	The SIESTA group
 #  This file is distributed under the terms of the
@@ -60,13 +60,12 @@ LDFLAGS =
 INCFLAGS =
 INSDIR = /opt
 
-COMP_LIBS = libsiestaLAPACK.a libsiestaBLAS.a  # just for sure
-#LDFLAGS += -L$(INSDIR)/openblas_nonthread/lib -Wl,-rpath=$(INSDIR)/openblas_nonthread/lib
-#LIBS = -L/opt/openblas_nonthread/lib -lopenblas_nonthread_steamroller-r0.3.13  #-lgomp
+COMP_LIBS =  libsiestaLAPACK.a libsiestaBLAS.a  # just for sure
+#LDFLAGS += -L$(INSDIR)/openblas/lib -Wl,-rpath=$(INSDIR)/openblas/lib
+#LIBS = -L/opt/openblas/lib -lopenblasomp  #-lgomp
 
 LDFLAGS += -L$(INSDIR)/scalapack/lib -Wl,-rpath=$(INSDIR)/scalapack/lib
 LIBS += -L/opt/scalapack/lib -lscalapack
-#LIBS+= ~/libopenblas_nonthread.so.0
 
 # Dependency rules ---------
 FFLAGS_DEBUG = -g -O1
@@ -142,7 +141,7 @@ FPPFLAGS += -DMPI
 COMP_LIBS =     #libsiestaLAPACK.a libsiestaBLAS.a
 
 LDFLAGS += -L$(INSDIR)/openblas/lib -Wl,-rpath=$(INSDIR)/openblas/lib
-LIBS = -lgomp -lopenblas_omp_steamrollerp-r0.3.13
+LIBS = -lgomp -lopenblasomp
 
 LIBS += -L/opt/scalapack/lib -lscalapack
 
