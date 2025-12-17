@@ -39,7 +39,7 @@ The number of 96 carbons is just devided by 2 carbons per core.
 Also, the 384 carbons and 1536 hydrogens using 96 nodes in parallel is possible by 2 jobs,
 that is 192 processes.
  
-### Points to Make the Vector-Parallel Siesta Code ###
+### To Make the Vector-Parallel Siesta Code ###
 
 First, we download the SIESTA-4.1b code by internet. On our Linux, we do 'tar -xfzv siesta-4.1-b4.tar.gz'. 
 Under the NEC's compiler, we invoke the 'module load intel-lx' directory, and do 'sh ../Src/obj_setup.sh' 
@@ -145,7 +145,7 @@ MPI and ScaLapack by gfortran; configure, make, and make install
 >scalapack-2.2.2: in SLmake.inc, CDEFS= -DAdd_  FC= mpifort  CC= mpicc ...
 
 Water molecules are executed with the files iceA841.fdf, iceA841.coor, H.psf and O.psf by: 
->#!/bin/bash; mpiexec -n 4 ~/siesta-4.1-b4gccAM1/Obj1/siesta <iceA841.fdf >iceA841.out &; exit 0
+>#!/bin/sh -f; mpiexec -n 8 ~/siesta-4.1-b4gccAM1/Obj1/siesta <iceA841.fdf >iceA841.out &; exit 0
 
 On NEC's supercomputer, you will do 'make' where the file 'arch.make' is: 
 
