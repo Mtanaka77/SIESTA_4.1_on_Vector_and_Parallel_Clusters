@@ -18,10 +18,12 @@ and the temperature rises at far-infrared radiations (Ref. 6).
 
 We can compile the siesta-4.1-b4 directory by gfortran for the parallel version with mpich, scaLapack, and openBLAS. The file named "siesta-4.1-b4gccAM1.tar.gz" is unzipped, do "sh ../Src/obj_setup.sh", and copy "arch.make" of "arch.make-2" (1) or (2) script to your machine. (The "-fallow-argument-mismatch" flag for mpifort.) The three packages including mpich above must be installed to your system bofore the "make" steps of Siesta are executed.
 
-The zipped files of openmpi-5.0.8, scalapack-2.2.2, and OpenBLAS-0.3.30 are downloaded at the internet sites. If they are not yet installed in your system, unzip and "make", and "make install" separately for MPI, Scalapack and OpenBLAS directories. 
-To compile the openmpi, one may use the configure script: "./configure --prefix=/opt/openmpi-5.0.8" and go to the "make" step. In the Scalapack, "SLmake.inc" in that directory may be changed to your PC environments 
+The zipped files of openmpi-5.0.8, OpenBLAS-0.3.30, and scalapack-2.2.2 are downloaded at the internet sites. If they are not yet installed in your system, unzip and "make", and "make install" separately for MPI, OpenBLAS, and Scalapack directories. 
+To compile the openmpi, one may use the configure script: "./configure --prefix=/opt/openmpi-5.0.8" and go to the "make" step. 
+In the OpenBLAS, "Makefile.rule" may be configured manually before the make step.
+In the Scalapack, "SLmake.inc" in that directory may be changed to your PC environments 
 (the "-fallow-argument-mismatch" flag for Fortran and "-Wno-implicit-function-declaration" for gcc, if needed). 
-In the OpenBLAS, "Makefile.rule" may be configured manually before the make step. 
+ 
 
 After the installation step, one should test which choice of MPI or OMP is most efficient in the gfortran run. It is very important that generic gfortran compiler must be used throughout the configure and make steps. The PGI fortran does not compile the SIESTA code properly. Remember that the usual cell size in simulations might be 300 Ry = 33 Ang in three dimensions.
 
