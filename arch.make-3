@@ -10,7 +10,7 @@
 #  cf. M.Tanaka et.al., 2nd GCME Conference, California, USA (2012).
 #
  
-(1) MPI, gfortran and gcc (generic) - it is slow !
+(1) MPI, gfortran and gcc (generic) - it is exact but slow !
 # 
 # Copyright (C) 1996-2016	The SIESTA group
 #  This file is distributed under the terms of the
@@ -142,7 +142,6 @@ COMP_LIBS =     #libsiestaLAPACK.a libsiestaBLAS.a
 
 LDFLAGS += -L$(INSDIR)/openblas/lib -Wl,-rpath=$(INSDIR)/openblas/lib
 LIBS = -lgomp -lopenblasomp
-
 LIBS += -L/opt/scalapack/lib -lscalapack
 
 FPPFLAGS = $(DEFS_PREFIX)-DFC_HAVE_ABORT
