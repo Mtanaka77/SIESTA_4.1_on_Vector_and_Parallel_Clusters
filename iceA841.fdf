@@ -1,6 +1,6 @@
 SystemName        ice non-periodic Verlet w/MW w/o spin
 SystemLabel       iceA841
-MaxWalltime       20000 s # Unit: in sec
+MaxWalltime       20000. s # Unit: in sec
 #
 NumberOfAtoms      384
 NumberOfSpecies      2    #  O & H
@@ -16,7 +16,6 @@ LatticeConstant 1.000 Ang
    0.000    0.000    12.7177
 %endblock LatticeVectors
 
-#
 %block SuperCell
  1   0   0
  0   1   0
