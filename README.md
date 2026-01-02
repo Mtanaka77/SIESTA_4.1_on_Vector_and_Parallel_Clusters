@@ -1,7 +1,7 @@
 ## Ab-initio SIESTA-4.1b Molecular Dynamics on Parallel or/and Vector Machines ##
 
 As "Open Internet Access by Molecular Dynamics Simulations", this page is concerned with 
-the parallel and vector-parallel SIESTA codes, especially on the vector-parallel code.
+the generic parallel code and the vector-parallel SIESTA code.
 
 This SIESTA code of siesta-4.1-b4gccAM1.tar.gz by MPI-gfortran-gcc is supplied with 
 the electric field of the form E(\vec{r}) + E0 * sin(omega*t), at Src/m_efield.F.
