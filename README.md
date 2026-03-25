@@ -27,19 +27,14 @@ Then, the directories of TOOLS, SRC, PBLAS, BLACS and BLACS/INSTALL are automati
 The SIESTA compilation using mpifort and mpicc for the MPI and OMP cases are the followings (the upper half of the arch.make, for siesta-4.1-b4gccAM1.tar.gz):
 
 .SUFFIXES:
-
 .SUFFIXES: .f .F .o .c .a .f90 .F90
-
 SIESTA_ARCH = gfortran-MPI-OMP
 
 CC = mpicc
-
 FPP = $(FC) -E -P -x c
-
 FC = mpifort
 
 MPI_INTERFACE = libmpi_f90.a
-
 MPI_INCLUDE = .
 
 FFLAGS = -O2 -fPIE -ftree-vectorize -fprefetch-loop-arrays -march=native
@@ -48,23 +43,15 @@ FFLAGS = -O2 -fPIE -ftree-vectorize -fprefetch-loop-arrays -march=native
 FC_SERIAL = gfortran
 
 AR = ar
-
 RANLIB = ranlib
-
 SYS = nag
-
 SP_KIND = 4
-
 DP_KIND = 8
-
 KINDS = ( S P K I N D ) (DP_KIND)
 
 FPPFLAGS = -DMPI
-
 LDFLAGS =
-
 INCFLAGS =
-
 INSDIR = /opt
 
 COMP_LIBS = # libsiestaLAPACK.a libsiestaBLAS.a
