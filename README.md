@@ -55,11 +55,9 @@ INCFLAGS =
 INSDIR = /opt
 
 COMP_LIBS = # libsiestaLAPACK.a libsiestaBLAS.a
-
 LDFLAGS += -L$(INSDIR)/openblas/lib -Wl,-rpath=$(INSDIR)/openblas/lib
 
 LIBS = -lgomp -L/opt/openblas/lib -lopenblasomp
-
 LIBS += -L/opt/scalapack/lib -lscalapack
 
 The Siesta-4.1b is installed by "make" with the -fallow-argument-mismatch switch of FFLAGS shown above. 
