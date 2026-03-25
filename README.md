@@ -15,7 +15,7 @@ and the temperature rises at far-infrared radiations (Ref. 6).
 
 "Ab initio SIESTA simulation code" is implemented for electronic structure calculations and ab-initio molecular dynamics simulations of molecules and solids by the spanish authors, https://departments.icmab.es/ (Refs. 1, 2). It is compiled by the gfortran compiler and for MPI parallel environments. It is also compiled by Intel's vector-and-parallel compiler, where the points of arch.make in CC, FC and LIBS are shown here in our PDF file. More things have to be modified and added due to vectorized complexity.
 
-We first download and unpack the code by "tar xf siesta-4.1b.tar.gz" (xf is now enough for unpacking). In the Obj directory, we do "sh ../Src/obj_setup.sh", copy "arch.make" and do "make". The "-fallow-argument-mismatch" flag may be necessarey for mpifort.
+We first download and unpack the code by "tar xf siesta-4.1b.tar.gz" (xf is now enough for unpacking). In the Obj directory, we do "sh ../Src/obj_setup.sh", copy "arch.make" and do "make". The "-fallow-argument-mismatch" flag may be necessary for mpifort.
 
 The zipped files of openmpi-5.0.8, OpenBLAS-0.3.30, and scalapack-2.2.2 are downloaded at the internet sites if they are not yet installed in your system. Unzip and "make", and "make install" separately for MPI, OpenBLAS, and Scalapack directories. 
 To compile the openmpi, one may use the configure script: "./configure --prefix=/opt/openmpi-5.0.8" and go to the "make" step (usually, it will need 20 minutes). 
