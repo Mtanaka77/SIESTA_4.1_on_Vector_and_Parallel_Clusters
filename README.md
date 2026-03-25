@@ -47,7 +47,7 @@ RANLIB = ranlib \
 SYS = nag \
 SP_KIND = 4 \
 DP_KIND = 8 \
-KINDS = ( S P K I N D ) (DP_KIND)
+KINDS = (SP_KIND) (DP_KIND)
 
 FPPFLAGS = -DMPI \
 LDFLAGS = \
