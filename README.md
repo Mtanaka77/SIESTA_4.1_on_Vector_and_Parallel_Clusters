@@ -32,7 +32,8 @@ The SIESTA compilation using mpifort and mpicc for the MPI and OMP cases are the
 
 SIESTA_ARCH = gfortran-MPI-OMP
 
-CC = mpicc
+CC = mpicc /
+
 FPP = $(FC) -E -P -x c
 FC = mpifort
 
