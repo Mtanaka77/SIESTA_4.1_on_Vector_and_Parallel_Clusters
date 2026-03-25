@@ -15,14 +15,49 @@ and the temperature rises at far-infrared radiations (Ref. 6).
 
 "Ab initio SIESTA simulation code" is implemented for electronic structure calculations and ab-initio molecular dynamics simulations of molecules and solids by the spanish authors, https://departments.icmab.es/ (Refs. 1, 2). It is compiled by the gfortran compiler and for MPI parallel environments. It is also compiled by Intel's vector-and-parallel compiler, where the points of arch.make in CC, FC and LIBS are shown here in our PDF file. More things have to be modified and added due to vectorized complexity.
 
-We can compile the siesta-4.1-b4 directory by gfortran for the parallel version with mpich, scaLapack, and openBLAS. The file named "siesta-4.1-b4gccAM1.tar.gz" is unzipped, do "sh ../Src/obj_setup.sh", and copy "arch.make" of "arch.make-2" (1) or (2) script to your machine. (The "-fallow-argument-mismatch" flag for mpifort.) The three packages including mpich above must be installed to your system bofore the "make" steps of Siesta are executed.
+We download and unpack the SIESTA code by "tar xf siesta-4.1b.tar.gz" (xf is now enough for unpacking). We compile the siesta-4.1-b4 directory by gfortran for the parallel version with mpich, scaLapack, and openBLAS. The file named "siesta-4.1-b4gccAM1.tar.gz" is unzipped, do "sh ../Src/obj_setup.sh", and copy "arch.make" of "arch.make-2" (1) or (2) script to your machine. (The "-fallow-argument-mismatch" flag for mpifort.) The three packages including mpich above must be installed to your system bofore the "make" steps of Siesta are executed.
 
 The zipped files of openmpi-5.0.8, OpenBLAS-0.3.30, and scalapack-2.2.2 are downloaded at the internet sites. If they are not yet installed in your system, unzip and "make", and "make install" separately for MPI, OpenBLAS, and Scalapack directories. 
 To compile the openmpi, one may use the configure script: "./configure --prefix=/opt/openmpi-5.0.8" and go to the "make" step. 
-In the OpenBLAS, "Makefile.rule" may be configured manually before the make step.
+In the OpenBLAS, "Makefile.rule" may be configured manually, and $ make and $ make install PREFIX=/opt/openblas, for example.
 In the Scalapack, "SLmake.inc" in that directory may be changed to your PC environments 
 (the "-fallow-argument-mismatch" flag for Fortran and "-Wno-implicit-function-declaration" for gcc, if needed). 
- 
+Then, the directories of TOOLS, SRC, PBLAS, BLACS and BLACS/INSTALL are automatically executed as "$ make" in these orders, to genarate libscalapack.a. It is 11.2 MB for the latest version of Debian-13 (Nov. 2025).
+
+The arch.make file, mpifort and mpicc for the MPI and OMP cases are the followings (the upper half of the arch.make, for siesta-4.1-b4gccAM1.tar.gz):
+.SUFFIXES:
+.SUFFIXES: .f .F .o .c .a .f90 .F90
+SIESTA_ARCH = gfortran-MPI-OMP
+
+CC = mpicc
+FPP = $(FC) -E -P -x c
+FC = mpifort
+
+MPI_INTERFACE = libmpi_f90.a
+MPI_INCLUDE = .
+
+FFLAGS = -O2 -fPIE -ftree-vectorize -fprefetch-loop-arrays -march=native
+-fallow-argument-mismatch -fopenmp
+FC_SERIAL = gfortran
+
+AR = ar
+RANLIB = ranlib
+SYS = nag
+
+SP_KIND = 4
+DP_KIND = 8
+KINDS = ( S P K I N D ) (DP_KIND)
+
+FPPFLAGS = -DMPI
+LDFLAGS =
+INCFLAGS =
+INSDIR = /opt
+COMP_LIBS = # libsiestaLAPACK.a libsiestaBLAS.a
+LDFLAGS += -L$(INSDIR)/openblas/lib -Wl,-rpath=$(INSDIR)/openblas/lib
+LIBS = -lgomp -L/opt/openblas/lib -lopenblasomp
+LIBS += -L/opt/scalapack/lib -lscalapack
+
+The Siesta-4.1b is installed by "make" with the -fallow-argument-mismatch switch of FFLAGS shown above. 
 
 After the installation step, one should test which choice of MPI or OMP is most efficient in the gfortran run. It is very important that generic gfortran compiler must be used throughout the configure and make steps. The PGI fortran does not compile the SIESTA code properly. Remember that the usual cell size in simulations might be 300 Ry = 33 Ang in three dimensions.
 
