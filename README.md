@@ -25,10 +25,12 @@ In the Scalapack, "SLmake.inc" in that directory may be changed to your PC envir
 Then, the directories of TOOLS, SRC, PBLAS, BLACS and BLACS/INSTALL are automatically executed as "$ make" in these orders, to genarate libscalapack.a. It is 11.2 MB for the latest version of Debian-13 (Nov. 2025).
 
 The SIESTA compilation using mpifort and mpicc for the MPI and OMP cases are the followings (the upper half of the arch.make, for siesta-4.1-b4gccAM1.tar.gz):
+
+#
 .SUFFIXES:
 .SUFFIXES: .f .F .o .c .a .f90 .F90
 SIESTA_ARCH = gfortran-MPI-OMP
-
+#
 CC = mpicc
 FPP = $(FC) -E -P -x c
 FC = mpifort
