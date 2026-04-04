@@ -68,6 +68,7 @@ After the installation step, one should test which choice of MPI or OMP is most 
 ### Special Vector-Parallel SIESTA Code ###
 
 For the Intel's vector and parallel compiler supplied by NEC machines, it uses the MPI and Scalapack packages. But, it needs to rewrite the code on more steps due to NEC's exact fortran coding. The arch.make script is shown as (3) of "arch.make-2", and the modified changes are summarized in "Annual Report of Tanaka and Zempo (2022)" (PDF) of this page. All the changes and figures are shown in English, so you may not miss the points. 
+
 *) The Intel vector-parallel compiler is another choice.
 
 The files are already and strictly corrected to using siesta-4.1-b4-LX.tar.gz and "arch.make". 
